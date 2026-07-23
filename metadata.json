@@ -1,0 +1,6 @@
+{
+  "name": "Dreamville Auto",
+  "description": "An interactive 3D website for Dreamville Auto tuner shop and luxury garage in Burnaby, BC, featuring interactive 3D car models, a 3D garage walkthrough, dynamic stat counters, service listings, live booking, and customer reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
