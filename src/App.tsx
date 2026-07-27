@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Loader from './components/Loader';
 import ThreeCarHero from './components/ThreeCarHero';
-import ThreeGarageWalkthrough from './components/ThreeGarageWalkthrough';
 import BuildCarousel from './components/BuildCarousel';
 import BlogSection from './components/BlogSection';
 import GpsHudMap from './components/GpsHudMap';
@@ -366,30 +365,6 @@ export default function App() {
                 </div>
               );
             })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* PHASE 6 — 3D GARAGE WALKTHROUGH (The Signature Feature) */}
-      <section id="garage" className="relative py-24 bg-void-black border-t border-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
-          
-          {/* Header */}
-          <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-16 gap-3">
-            <span className="font-mono text-xs text-blood-red tracking-[0.25em] uppercase">IMMERSIVE INTERACTIVE FEED</span>
-            <h2 className="font-bebas text-4xl md:text-6xl text-steel-white tracking-wider uppercase">
-              EXPLORE THE <span className="text-blood-red">3D GARAGE</span>
-            </h2>
-            <p className="text-sm text-chrome-silver leading-relaxed">
-              Step inside our world-class setup in Burnaby, BC. Drag to orbit 360°, zoom in/out, 
-              or click on the highlighted workstation nodes to view on-site high-end machinery details.
-            </p>
-          </div>
-
-          {/* Three.js interactive 3D container component */}
-          <div className="w-full h-full relative">
-            <ThreeGarageWalkthrough />
           </div>
 
         </div>
@@ -793,7 +768,6 @@ export default function App() {
               <div className="flex flex-col gap-2 text-[11px]">
                 <a href="#home" className="hover:text-blood-red transition-colors">Home Page</a>
                 <a href="#services" className="hover:text-blood-red transition-colors">TIG & ECU Services</a>
-                <a href="#garage" className="hover:text-blood-red transition-colors">3D Interactive Workshop</a>
                 <a href="#gallery" className="hover:text-blood-red transition-colors">Tuner Builds Logs</a>
                 <a href="#blog" className="hover:text-blood-red transition-colors">Garage Blog Articles</a>
               </div>

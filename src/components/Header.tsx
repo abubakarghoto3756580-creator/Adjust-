@@ -19,7 +19,7 @@ export default function Header({ onBookNowClick }: HeaderProps) {
       }
 
       // Very simple scroll-spy for active navigation links
-      const sections = ['home', 'services', 'garage', 'gallery', 'blog', 'reviews', 'booking'];
+      const sections = ['home', 'services', 'gallery', 'blog', 'reviews', 'booking'];
       const scrollPos = window.scrollY + 120;
 
       for (const section of sections) {
@@ -49,7 +49,6 @@ export default function Header({ onBookNowClick }: HeaderProps) {
   const menuItems = [
     { label: 'Home', target: 'home' },
     { label: 'Services', target: 'services' },
-    { label: '3D Garage', target: 'garage' },
     { label: 'Gallery', target: 'gallery' },
     { label: 'Blog', target: 'blog' },
     { label: 'Reviews', target: 'reviews' },
