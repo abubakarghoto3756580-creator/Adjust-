@@ -63,7 +63,7 @@ export const BUILDS_DATA: BuildItem[] = [
     carModel: 'Nissan GT-R R35',
     category: 'Performance',
     workDone: 'Stage 3 Tune, Custom Titanium Exhaust, Alpha Intercooler, 850 HP Calibration',
-    image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/builds/gtr-r35.jpg',
     instagramUrl: 'https://instagram.com'
   },
   {
@@ -71,7 +71,7 @@ export const BUILDS_DATA: BuildItem[] = [
     carModel: 'Toyota GR Supra A90',
     category: 'Tuning',
     workDone: 'Downpipe, Remap, KW V3 Coilovers, Advan GT Wheels, 520 WHP Dynamic Mapping',
-    image: 'https://images.unsplash.com/photo-1617469167446-80e3a4466551?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/builds/supra-a90.jpg',
     instagramUrl: 'https://instagram.com'
   },
   {
@@ -79,7 +79,7 @@ export const BUILDS_DATA: BuildItem[] = [
     carModel: 'Mazda RX-7 FD3S',
     category: 'Custom',
     workDone: 'Single Turbo Conversion, Apexi PowerFC, Street Port Rotary Rebuild, V-Mount Intercooler',
-    image: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/builds/rx7-fd.jpg',
     instagramUrl: 'https://instagram.com'
   },
   {
@@ -87,7 +87,7 @@ export const BUILDS_DATA: BuildItem[] = [
     carModel: 'Porsche 911 GT3 RS',
     category: 'Detailing',
     workDone: 'Custom Decals, 3-Stage Paint Correction, Gtechniq Serum Ceramic Coating, Full Front PPF',
-    image: 'https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/builds/porsche-gt3.jpg',
     instagramUrl: 'https://instagram.com'
   },
   {
@@ -95,7 +95,7 @@ export const BUILDS_DATA: BuildItem[] = [
     carModel: 'Honda Civic Type R FL5',
     category: 'Performance',
     workDone: 'Hondata FlashPro, HKS Intercooler, Milltek Exhaust, Eventuri Carbon Intake',
-    image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=800&q=80',
+    image: '/assets/builds/civic-type-r.jpg',
     instagramUrl: 'https://instagram.com'
   }
 ];
@@ -145,7 +145,7 @@ export const BLOG_POSTS_DATA: BlogPost[] = [
     authorTitle: 'Lead Calibration Engineer',
     category: 'Performance & Tuning',
     readTime: '5 min read',
-    coverImage: 'https://images.unsplash.com/photo-1617469167446-80e3a4466551?auto=format&fit=crop&w=1200&q=80',
+    coverImage: '/assets/blog/ecu-remapping-cover.jpg',
     summary: 'Discover how bespoke ECU remapping on our Burnaby AWD dyno optimizes ignition timing, air-fuel ratios, and boost pressure curves to gain up to 30%+ WHP safely without sacrificing engine longevity.',
     content: [
       'Modern turbocharged and direct-injected engines leave significant factory power reserves on the table. Vehicle manufacturers calibrate Engine Control Units (ECUs) with broad safety margins designed for low-octane fuel, extreme temperature variances, and delayed maintenance intervals globally.',
