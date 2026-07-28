@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Loader from './components/Loader';
-import ThreeCarHero from './components/ThreeCarHero';
+import BMWScrollHero from './components/BMWScrollHero';
 import BuildCarousel from './components/BuildCarousel';
 import BlogSection from './components/BlogSection';
 import GpsHudMap from './components/GpsHudMap';
@@ -17,6 +17,7 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeTab, setActiveTab] = useState<'all' | 'tuning' | 'maintenance'>('all');
   const [activeFlippedCard, setActiveFlippedCard] = useState<string | null>(null);
+  const heroSectionRef = useRef<HTMLElement>(null);
   
   // Real Local Storage booking persistence
   const [bookings, setBookings] = useState<Booking[]>(() => {
@@ -147,7 +148,7 @@ export default function App() {
       <Header onBookNowClick={handleScrollToBooking} />
 
       {/* PHASE 3 — HERO SECTION */}
-      <section id="home" className="relative min-h-screen pt-24 md:pt-28 flex items-center justify-center overflow-hidden">
+      <section id="home" ref={heroSectionRef} className="relative min-h-screen pt-24 md:pt-28 flex items-center justify-center overflow-hidden">
         {/* Particle and techy floor guides */}
         <div className="absolute inset-0 carbon-texture opacity-15 pointer-events-none" />
         
@@ -213,9 +214,9 @@ export default function App() {
 
           </div>
 
-          {/* Hero Right 3D Car Viewport */}
+          {/* Hero Right Visual — BMW M3 E92 scroll-assembly frame sequence */}
           <div className="lg:col-span-6 w-full h-[400px] md:h-[500px] relative">
-            <ThreeCarHero />
+            <BMWScrollHero pinTargetRef={heroSectionRef} />
           </div>
 
         </div>
