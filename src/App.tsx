@@ -170,7 +170,7 @@ export default function App() {
               <span className="font-bebas text-3xl md:text-4xl text-chrome-silver tracking-wide uppercase leading-none">
                 WHERE YOUR CAR GETS
               </span>
-              <h2 className="font-bebas text-6xl md:text-8xl text-steel-white tracking-widest uppercase leading-tight">
+              <h2 className="font-bebas text-[clamp(2.5rem,11vw,6rem)] md:text-8xl text-steel-white tracking-normal sm:tracking-widest uppercase leading-tight">
                 DREAMVILLE <span className="text-blood-red neon-glow-red">TREATMENT</span>
               </h2>
             </div>

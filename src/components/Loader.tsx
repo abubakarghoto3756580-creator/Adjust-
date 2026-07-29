@@ -101,7 +101,7 @@ export default function Loader({ onComplete }: LoaderProps) {
           <span className="font-mono text-[10px] tracking-[0.35em] text-blood-red uppercase animate-pulse">
             HIGH PERFORMANCE GARAGE
           </span>
-          <h1 className="font-bebas text-6xl md:text-7xl text-steel-white tracking-widest mt-1 uppercase">
+          <h1 className="font-bebas text-[clamp(1.6rem,8.5vw,3rem)] sm:text-6xl md:text-7xl text-steel-white tracking-normal sm:tracking-widest mt-1 uppercase whitespace-nowrap px-2">
             DREAMVILLE<span className="text-blood-red neon-glow-red">.</span>AUTO
           </h1>
           <p className="font-rajdhani text-xs tracking-wider text-chrome-silver uppercase mt-1">
