@@ -88,7 +88,7 @@ export default function Loader({ onComplete }: LoaderProps) {
   };
 
   return (
-    <div className={`fixed inset-0 z-50 bg-void-black flex flex-col items-center justify-center p-6 transition-all duration-700 ${ignitionPressed ? 'scale-110 opacity-0 pointer-events-none' : ''}`}>
+    <div className={`fixed inset-0 z-50 bg-void-black flex flex-col items-center justify-center overflow-y-auto p-6 transition-all duration-700 ${ignitionPressed ? 'scale-110 opacity-0 pointer-events-none' : ''}`}>
       
       {/* Background Tech Hex Grid / Carbon Detail */}
       <div className="absolute inset-0 carbon-texture opacity-30 pointer-events-none" />
@@ -97,14 +97,14 @@ export default function Loader({ onComplete }: LoaderProps) {
       <div className="relative z-10 w-full max-w-lg flex flex-col items-center text-center">
         
         {/* Animated Brand Header */}
-        <div className="mb-8 flex flex-col items-center">
+        <div className="mb-6 flex flex-col items-center">
           <span className="font-mono text-[10px] tracking-[0.35em] text-blood-red uppercase animate-pulse">
             HIGH PERFORMANCE GARAGE
           </span>
           <img
             src="/assets/brand/dreamville-logo-large.webp"
             alt="Dreamville Auto"
-            className="w-[min(78vw,320px)] h-auto object-contain mt-2 mb-1 select-none"
+            className="h-[clamp(56px,13vh,130px)] w-auto max-w-[80vw] object-contain mt-2 mb-1 select-none"
             draggable={false}
           />
           <p className="font-rajdhani text-xs tracking-wider text-chrome-silver uppercase mt-1">
@@ -113,7 +113,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         </div>
 
         {/* Big Interactive 3D RPM / Core Element */}
-        <div className="relative w-60 h-60 md:w-64 md:h-64 flex items-center justify-center mb-8">
+        <div className="relative w-60 h-60 md:w-64 md:h-64 flex items-center justify-center mb-6">
           
           {/* Circular Gauges */}
           <svg className="absolute inset-0 w-full h-full transform -rotate-90">
@@ -196,7 +196,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         </div>
 
         {/* Feature Icons Footer */}
-        <div className="flex gap-6 items-center justify-center mt-8 text-neutral-700 font-mono text-[10px] uppercase tracking-wider">
+        <div className="flex gap-6 items-center justify-center mt-6 text-neutral-700 font-mono text-[10px] uppercase tracking-wider">
           <div className="flex items-center gap-1">
             <ShieldCheck size={12} className="text-blood-red" />
             <span>OBD-II Verified</span>
