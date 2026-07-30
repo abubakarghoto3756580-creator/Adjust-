@@ -3,7 +3,7 @@ import { BUILDS_DATA } from '../data';
 import { ChevronLeft, ChevronRight, Instagram, ArrowUpRight } from 'lucide-react';
 
 export default function BuildCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(2); // Start with Supra/RX-7 centered
+  const [currentIndex, setCurrentIndex] = useState(2); // Start roughly centered in the gallery
   const [filter, setFilter] = useState<string>('All');
 
   const categories = ['All', 'Performance', 'Tuning', 'Custom', 'Detailing'];

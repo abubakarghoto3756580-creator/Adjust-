@@ -59,43 +59,43 @@ export const SERVICES_DATA: ServiceItem[] = [
 
 export const BUILDS_DATA: BuildItem[] = [
   {
-    id: 'gtr-r35',
-    carModel: 'Nissan GT-R R35',
-    category: 'Performance',
-    workDone: 'Stage 3 Tune, Custom Titanium Exhaust, Alpha Intercooler, 850 HP Calibration',
-    image: '/assets/builds/gtr-r35.jpg',
-    instagramUrl: 'https://instagram.com'
-  },
-  {
-    id: 'supra-a90',
-    carModel: 'Toyota GR Supra A90',
+    id: 'audi-s4',
+    carModel: 'Audi S4',
     category: 'Tuning',
-    workDone: 'Downpipe, Remap, KW V3 Coilovers, Advan GT Wheels, 520 WHP Dynamic Mapping',
-    image: '/assets/builds/supra-a90.jpg',
+    workDone: 'Carbon Fiber Trunk Spoiler, Quad-Tip Exhaust Upgrade, Full Detail & Paint Correction',
+    image: '/assets/builds/audi-s4.jpg',
     instagramUrl: 'https://instagram.com'
   },
   {
-    id: 'rx7-fd',
-    carModel: 'Mazda RX-7 FD3S',
-    category: 'Custom',
-    workDone: 'Single Turbo Conversion, Apexi PowerFC, Street Port Rotary Rebuild, V-Mount Intercooler',
-    image: '/assets/builds/rx7-fd.jpg',
-    instagramUrl: 'https://instagram.com'
-  },
-  {
-    id: 'porsche-gt3',
-    carModel: 'Porsche 911 GT3 RS',
+    id: 'honda-s2000',
+    carModel: 'Honda S2000',
     category: 'Detailing',
-    workDone: 'Custom Decals, 3-Stage Paint Correction, Gtechniq Serum Ceramic Coating, Full Front PPF',
-    image: '/assets/builds/porsche-gt3.jpg',
+    workDone: 'Full Engine Bay Detail, Paint Correction, Convertible Top Care, Show-Ready Presentation',
+    image: '/assets/builds/honda-s2000.jpg',
     instagramUrl: 'https://instagram.com'
   },
   {
-    id: 'civic-type-r',
-    carModel: 'Honda Civic Type R FL5',
+    id: 'bmw-m3-e92',
+    carModel: 'BMW M3 E92',
     category: 'Performance',
-    workDone: 'Hondata FlashPro, HKS Intercooler, Milltek Exhaust, Eventuri Carbon Intake',
-    image: '/assets/builds/civic-type-r.jpg',
+    workDone: 'Carbon Fiber Front Lip, Coilover Suspension Service, Track Alignment & Corner Balance',
+    image: '/assets/builds/bmw-m3-e92.jpg',
+    instagramUrl: 'https://instagram.com'
+  },
+  {
+    id: 'lexus-isf',
+    carModel: 'Lexus IS F',
+    category: 'Custom',
+    workDone: 'Carbon Fiber Hood Installation, Custom Paint Detail, Performance Wheel Fitment',
+    image: '/assets/builds/lexus-isf.jpg',
+    instagramUrl: 'https://instagram.com'
+  },
+  {
+    id: 'mercedes-amg-gt63s',
+    carModel: 'Mercedes-AMG GT 63 S',
+    category: 'Detailing',
+    workDone: 'Satin Matte Wrap Protection, Ceramic PPF Application, Full Exterior Detail',
+    image: '/assets/builds/mercedes-amg-gt63s.jpg',
     instagramUrl: 'https://instagram.com'
   }
 ];
