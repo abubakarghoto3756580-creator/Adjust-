@@ -74,19 +74,13 @@ export default function Header({ onBookNowClick }: HeaderProps) {
           }}
           className="flex items-center gap-2.5 group"
         >
-          {/* Logo Icon with custom tuner wheel aesthetic */}
-          <div className="relative w-9 h-9 rounded-full bg-carbon-gray border border-blood-red flex items-center justify-center overflow-hidden box-glow-red transition-transform group-hover:rotate-45 duration-500">
-            <span className="font-bebas text-lg text-steel-white tracking-wider">D</span>
-            <div className="absolute inset-0 border border-t-blood-red border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin" style={{ animationDuration: '3s' }} />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bebas text-xl md:text-2xl text-steel-white tracking-wider leading-none">
-              DREAMVILLE<span className="text-blood-red">.</span>AUTO
-            </span>
-            <span className="font-mono text-[9px] text-chrome-silver tracking-widest leading-none mt-0.5">
-              TUNER GARAGE
-            </span>
-          </div>
+          {/* Official Dreamville Auto logo — scales responsively, never cropped */}
+          <img
+            src="/assets/brand/dreamville-logo-header.webp"
+            alt="Dreamville Auto"
+            className="h-11 md:h-14 w-auto object-contain select-none"
+            draggable={false}
+          />
         </a>
 
         {/* DESKTOP LINKS */}

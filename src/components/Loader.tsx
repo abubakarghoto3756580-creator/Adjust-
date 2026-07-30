@@ -97,13 +97,16 @@ export default function Loader({ onComplete }: LoaderProps) {
       <div className="relative z-10 w-full max-w-lg flex flex-col items-center text-center">
         
         {/* Animated Brand Header */}
-        <div className="mb-8">
+        <div className="mb-8 flex flex-col items-center">
           <span className="font-mono text-[10px] tracking-[0.35em] text-blood-red uppercase animate-pulse">
             HIGH PERFORMANCE GARAGE
           </span>
-          <h1 className="font-bebas text-[clamp(1.6rem,8.5vw,3rem)] sm:text-6xl md:text-7xl text-steel-white tracking-normal sm:tracking-widest mt-1 uppercase whitespace-nowrap px-2">
-            DREAMVILLE<span className="text-blood-red neon-glow-red">.</span>AUTO
-          </h1>
+          <img
+            src="/assets/brand/dreamville-logo-large.webp"
+            alt="Dreamville Auto"
+            className="w-[min(78vw,320px)] h-auto object-contain mt-2 mb-1 select-none"
+            draggable={false}
+          />
           <p className="font-rajdhani text-xs tracking-wider text-chrome-silver uppercase mt-1">
             Burnaby, BC · Est. 2015
           </p>
