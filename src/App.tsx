@@ -216,7 +216,7 @@ export default function App() {
 
           {/* Hero Right Visual — BMW M3 E92 scroll-assembly frame sequence */}
           <div className="lg:col-span-6 w-full h-[400px] md:h-[500px] relative">
-            <BMWScrollHero pinTargetRef={heroSectionRef} />
+            <BMWScrollHero />
           </div>
 
         </div>
