@@ -36,7 +36,7 @@ export default function GpsHudMap() {
   ];
 
   return (
-    <div className="relative w-full h-full min-h-[350px] flex flex-col border border-neutral-900 rounded-xl bg-neutral-950 overflow-hidden box-glow-red">
+    <div className="relative w-full h-full min-h-[350px] flex flex-col border border-neutral-900 rounded-none bg-neutral-950 overflow-hidden box-glow-red">
       
       {/* GPS Header HUD strip */}
       <div className="bg-[#0b0b0b] border-b border-neutral-900 p-3.5 flex items-center justify-between font-mono text-[10px] text-chrome-silver">
@@ -121,7 +121,7 @@ export default function GpsHudMap() {
                 </div>
 
                 {/* Micro Label above pointer */}
-                <span className={`absolute bottom-8 px-2 py-1 rounded bg-[#0b0b0b]/95 border border-neutral-900 font-mono text-[9px] tracking-wider text-steel-white shadow-2xl whitespace-nowrap transition-all opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 ${isSelected ? 'opacity-100 scale-100 border-blood-red/30' : ''}`}>
+                <span className={`absolute bottom-8 px-2 py-1 rounded-none bg-[#0b0b0b]/95 border border-neutral-900 font-mono text-[9px] tracking-wider text-steel-white shadow-2xl whitespace-nowrap transition-all opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 ${isSelected ? 'opacity-100 scale-100 border-blood-red/30' : ''}`}>
                   {loc.id === 'shop' ? '★ DREAMVILLE' : loc.name}
                 </span>
               </button>
@@ -130,7 +130,7 @@ export default function GpsHudMap() {
         </div>
 
         {/* GPS Coordinates HUD Overlay */}
-        <div className="absolute bottom-4 left-4 z-10 bg-[#070707]/90 backdrop-blur-md p-3.5 border border-neutral-900 rounded-lg max-w-[280px]">
+        <div className="absolute bottom-4 left-4 z-10 bg-[#070707]/90 backdrop-blur-md p-3.5 border border-neutral-900 rounded-none max-w-[280px]">
           {(() => {
             const current = locations.find((l) => l.id === activePin) || locations[0];
             return (
@@ -150,16 +150,16 @@ export default function GpsHudMap() {
         </div>
 
         {/* Zoom scale HUD triggers */}
-        <div className="absolute bottom-4 right-4 z-10 flex flex-col gap-1.5 bg-[#070707]/90 backdrop-blur-sm p-1.5 border border-neutral-900 rounded-lg">
+        <div className="absolute bottom-4 right-4 z-10 flex flex-col gap-1.5 bg-[#070707]/90 backdrop-blur-sm p-1.5 border border-neutral-900 rounded-none">
           <button 
             onClick={() => setMapScale(s => Math.min(1.5, s + 0.15))}
-            className="w-7 h-7 flex items-center justify-center font-mono text-xs text-chrome-silver hover:text-blood-red hover:bg-neutral-900 border border-neutral-800 rounded transition-all"
+            className="w-7 h-7 flex items-center justify-center font-mono text-xs text-chrome-silver hover:text-blood-red hover:bg-neutral-900 border border-neutral-800 rounded-none transition-all"
           >
             +
           </button>
           <button 
             onClick={() => setMapScale(s => Math.max(0.7, s - 0.15))}
-            className="w-7 h-7 flex items-center justify-center font-mono text-xs text-chrome-silver hover:text-blood-red hover:bg-neutral-900 border border-neutral-800 rounded transition-all"
+            className="w-7 h-7 flex items-center justify-center font-mono text-xs text-chrome-silver hover:text-blood-red hover:bg-neutral-900 border border-neutral-800 rounded-none transition-all"
           >
             -
           </button>

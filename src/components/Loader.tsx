@@ -176,7 +176,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         </div>
 
         {/* Secondary Diagnostics Status Box */}
-        <div className="w-full bg-carbon-gray/50 border border-neutral-900 rounded-lg p-4 font-mono text-[11px] text-left text-chrome-silver">
+        <div className="w-full bg-carbon-gray/50 border border-neutral-900 rounded-none p-4 font-mono text-[11px] text-left text-chrome-silver">
           <div className="flex items-center justify-between border-b border-neutral-900 pb-2 mb-2">
             <div className="flex items-center gap-1.5 text-blood-red">
               <span className="w-1.5 h-1.5 rounded-full bg-blood-red animate-ping" />

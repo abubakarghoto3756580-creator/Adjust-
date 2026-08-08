@@ -26,8 +26,8 @@ export default function BuildCarousel() {
   return (
     <div className="flex flex-col gap-8 w-full">
       
-      {/* Category Filter Pills */}
-      <div className="flex flex-wrap gap-2 justify-center items-center">
+      {/* Category Filter Tabs */}
+      <div className="flex flex-wrap gap-6 justify-center items-center border-b border-neutral-900">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -35,13 +35,16 @@ export default function BuildCarousel() {
               setFilter(cat);
               setCurrentIndex(0);
             }}
-            className={`px-4 py-1.5 rounded-full font-mono text-xs tracking-wider uppercase border transition-all ${
+            className={`relative pb-3 font-mono text-xs tracking-[1.5px] uppercase transition-colors ${
               filter === cat
-                ? 'bg-blood-red border-blood-red text-steel-white shadow-[0_0_10px_rgba(196,30,30,0.3)]'
-                : 'bg-carbon-gray/50 border-neutral-900 text-chrome-silver hover:border-neutral-800 hover:text-steel-white'
+                ? 'text-steel-white'
+                : 'text-chrome-silver hover:text-steel-white'
             }`}
           >
             {cat}
+            {filter === cat && (
+              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-blood-red" />
+            )}
           </button>
         ))}
       </div>
@@ -77,7 +80,7 @@ export default function BuildCarousel() {
                 <div
                   key={build.id}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`absolute w-[280px] md:w-[360px] h-[300px] md:h-[350px] transition-all duration-500 ease-out origin-center rounded-xl overflow-hidden border cursor-pointer select-none ${
+                  className={`absolute w-[280px] md:w-[360px] h-[300px] md:h-[350px] transition-all duration-500 ease-out origin-center rounded-none overflow-hidden border cursor-pointer select-none ${
                     isActive 
                       ? 'border-blood-red shadow-[0_0_25px_rgba(196,30,30,0.4)]' 
                       : 'border-neutral-900 shadow-2xl'
@@ -101,7 +104,7 @@ export default function BuildCarousel() {
                   <div className="absolute inset-0 bg-gradient-to-t from-void-black via-void-black/30 to-transparent pointer-events-none" />
 
                   {/* Top Category Badge */}
-                  <span className="absolute top-4 left-4 bg-void-black/80 backdrop-blur-md border border-neutral-900 font-mono text-[9px] text-blood-red px-2.5 py-1 rounded-full uppercase tracking-widest font-semibold">
+                  <span className="absolute top-4 left-4 bg-void-black/80 backdrop-blur-md border border-neutral-900 font-mono text-[9px] text-blood-red px-2.5 py-1 rounded-none uppercase tracking-widest font-semibold">
                     {build.category}
                   </span>
 
@@ -142,7 +145,7 @@ export default function BuildCarousel() {
 
         </div>
       ) : (
-        <div className="w-full h-40 flex items-center justify-center border border-dashed border-neutral-800 rounded">
+        <div className="w-full h-40 flex items-center justify-center border border-dashed border-neutral-800 rounded-none">
           <p className="font-mono text-xs text-chrome-silver">No builds matching this category yet.</p>
         </div>
       )}

@@ -101,7 +101,7 @@ export default function Header({ onBookNowClick }: HeaderProps) {
             >
               {item.label}
               {activeSection === item.target && (
-                <span className="absolute bottom-0 inset-x-0 h-0.5 bg-blood-red neon-glow-red rounded" />
+                <span className="absolute bottom-0 inset-x-0 h-0.5 bg-blood-red neon-glow-red rounded-none" />
               )}
             </a>
           ))}
@@ -111,7 +111,7 @@ export default function Header({ onBookNowClick }: HeaderProps) {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:604-442-8265"
-            className="flex items-center gap-1.5 font-mono text-[11px] text-chrome-silver hover:text-steel-white transition-colors border border-neutral-900 px-3 py-1.5 rounded bg-carbon-gray/20"
+            className="flex items-center gap-1.5 font-mono text-[11px] text-chrome-silver hover:text-steel-white transition-colors border border-neutral-900 px-3 py-1.5 rounded-none bg-carbon-gray/20"
           >
             <Phone size={11} className="text-blood-red" />
             <span>604-442-8265</span>
@@ -119,7 +119,7 @@ export default function Header({ onBookNowClick }: HeaderProps) {
           
           <button
             onClick={onBookNowClick}
-            className="bg-blood-red hover:bg-red-700 text-steel-white px-5 py-2 text-xs font-rajdhani font-bold tracking-widest uppercase rounded cursor-pointer animate-pulse transition-colors hover:scale-[1.03] active:scale-95 duration-200 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
+            className="bg-blood-red hover:bg-red-700 text-steel-white px-5 py-2 text-xs font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer animate-pulse transition-colors hover:scale-[1.03] active:scale-95 duration-200 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
           >
             BOOK NOW
           </button>
@@ -129,14 +129,14 @@ export default function Header({ onBookNowClick }: HeaderProps) {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={onBookNowClick}
-            className="bg-blood-red text-steel-white px-3 py-1.5 text-[10px] font-rajdhani font-bold tracking-wider uppercase rounded"
+            className="bg-blood-red text-steel-white px-3 py-1.5 text-[10px] font-rajdhani font-bold tracking-wider uppercase rounded-none"
           >
             BOOK
           </button>
           
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 border border-carbon-gray rounded bg-carbon-gray/50 text-steel-white"
+            className="p-2 border border-carbon-gray rounded-none bg-carbon-gray/50 text-steel-white"
           >
             {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -169,7 +169,7 @@ export default function Header({ onBookNowClick }: HeaderProps) {
         </div>
 
         {/* Mobile Info Box */}
-        <div className="mt-auto bg-carbon-gray/30 border border-neutral-900 rounded p-4 flex flex-col gap-3">
+        <div className="mt-auto bg-carbon-gray/30 border border-neutral-900 rounded-none p-4 flex flex-col gap-3">
           <div>
             <span className="font-mono text-[9px] text-chrome-silver uppercase block">Location</span>
             <p className="font-rajdhani text-sm text-steel-white font-semibold">📍 6432 Beresford St, Burnaby BC</p>

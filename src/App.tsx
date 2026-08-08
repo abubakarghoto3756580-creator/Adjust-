@@ -158,7 +158,7 @@ export default function App() {
           <div className="lg:col-span-6 flex flex-col items-start gap-5">
             
             {/* Tech tag banner */}
-            <div className="inline-flex items-center gap-2 bg-neutral-900/80 border border-neutral-800 px-3 py-1.5 rounded-full">
+            <div className="inline-flex items-center gap-2 bg-neutral-900/80 border border-neutral-800 px-3 py-1.5 rounded-none">
               <span className="w-2 h-2 rounded-full bg-blood-red animate-pulse" />
               <span className="font-mono text-[9px] tracking-widest text-chrome-silver uppercase">
                 BURNABY'S JDM & PERFORMANCE SPECIALISTS
@@ -183,7 +183,7 @@ export default function App() {
             </p>
 
             {/* Google review star summary */}
-            <div className="flex items-center gap-3 bg-carbon-gray/40 border border-neutral-900 rounded-lg p-3 w-full max-w-sm">
+            <div className="flex items-center gap-3 bg-carbon-gray/40 border border-neutral-900 rounded-none p-3 w-full max-w-sm">
               <div className="flex gap-0.5 text-yellow-500">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={15} fill="currentColor" />
@@ -199,14 +199,14 @@ export default function App() {
             <div className="flex flex-wrap gap-3.5 mt-2 w-full sm:w-auto">
               <button
                 onClick={handleScrollToBooking}
-                className="flex-1 sm:flex-none text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded cursor-pointer transition-all hover:scale-105 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
+                className="flex-1 sm:flex-none text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all hover:scale-105 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
               >
                 BOOK APPOINTMENT
               </button>
               
               <a
                 href="tel:604-442-8265"
-                className="flex-1 sm:flex-none text-center border border-neutral-800 hover:border-blood-red hover:text-blood-red bg-carbon-gray/20 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded transition-colors"
+                className="flex-1 sm:flex-none text-center border border-neutral-800 hover:border-blood-red hover:text-blood-red bg-carbon-gray/20 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none transition-colors"
               >
                 CALL NOW
               </a>
@@ -231,7 +231,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             
-            <div className="bg-carbon-gray/25 border border-neutral-900/60 rounded-xl p-5 md:p-6 text-center hover:border-blood-red/40 transition-all group duration-300 transform hover:-translate-y-1">
+            <div className="bg-carbon-gray/25 border border-neutral-900/60 rounded-none p-5 md:p-6 text-center hover:border-blood-red/40 transition-all group duration-300 transform hover:-translate-y-1">
               <span className="font-bebas text-4xl md:text-5xl text-steel-white tracking-wider block">
                 {stats.reviews === 135 ? '135+' : `${stats.reviews}+`}
               </span>
@@ -240,7 +240,7 @@ export default function App() {
               <div className="h-0.5 bg-neutral-900 group-hover:bg-blood-red mt-3 transition-colors duration-300" />
             </div>
 
-            <div className="bg-carbon-gray/25 border border-neutral-900/60 rounded-xl p-5 md:p-6 text-center hover:border-blood-red/40 transition-all group duration-300 transform hover:-translate-y-1">
+            <div className="bg-carbon-gray/25 border border-neutral-900/60 rounded-none p-5 md:p-6 text-center hover:border-blood-red/40 transition-all group duration-300 transform hover:-translate-y-1">
               <span className="font-bebas text-4xl md:text-5xl text-steel-white tracking-wider block">
                 {stats.rating === 4.9 ? '4.9★' : `${stats.rating}★`}
               </span>
@@ -249,7 +249,7 @@ export default function App() {
               <div className="h-0.5 bg-neutral-900 group-hover:bg-blood-red mt-3 transition-colors duration-300" />
             </div>
 
-            <div className="bg-carbon-gray/25 border border-neutral-900/60 rounded-xl p-5 md:p-6 text-center hover:border-blood-red/40 transition-all group duration-300 transform hover:-translate-y-1">
+            <div className="bg-carbon-gray/25 border border-neutral-900/60 rounded-none p-5 md:p-6 text-center hover:border-blood-red/40 transition-all group duration-300 transform hover:-translate-y-1">
               <span className="font-bebas text-4xl md:text-5xl text-steel-white tracking-wider block">
                 {stats.experience === 10 ? '10+ Yrs' : `${stats.experience} Yrs`}
               </span>
@@ -258,7 +258,7 @@ export default function App() {
               <div className="h-0.5 bg-neutral-900 group-hover:bg-blood-red mt-3 transition-colors duration-300" />
             </div>
 
-            <div className="bg-carbon-gray/25 border border-neutral-900/60 rounded-xl p-5 md:p-6 text-center hover:border-blood-red/40 transition-all group duration-300 transform hover:-translate-y-1">
+            <div className="bg-carbon-gray/25 border border-neutral-900/60 rounded-none p-5 md:p-6 text-center hover:border-blood-red/40 transition-all group duration-300 transform hover:-translate-y-1">
               <span className="font-bebas text-4xl md:text-5xl text-steel-white tracking-wider block">
                 {stats.satisfaction}%
               </span>
@@ -313,11 +313,11 @@ export default function App() {
                     
                     {/* FRONT SIDE */}
                     <div 
-                      className="absolute inset-0 bg-carbon-gray border border-neutral-900 hover:border-blood-red/40 rounded-xl p-6 flex flex-col justify-between"
+                      className="absolute inset-0 bg-carbon-gray border border-neutral-900 hover:border-blood-red/40 rounded-none p-6 flex flex-col justify-between"
                       style={{ backfaceVisibility: 'hidden' }}
                     >
                       <div className="flex flex-col gap-4">
-                        <div className="w-12 h-12 rounded-lg bg-neutral-950 flex items-center justify-center border border-neutral-900 group-hover:border-blood-red/30 transition-all">
+                        <div className="w-12 h-12 rounded-none bg-neutral-950 flex items-center justify-center border border-neutral-900 group-hover:border-blood-red/30 transition-all">
                           {renderServiceIcon(service.icon)}
                         </div>
                         <h3 className="font-rajdhani text-xl font-bold tracking-wider text-steel-white">
@@ -336,7 +336,7 @@ export default function App() {
 
                     {/* BACK SIDE */}
                     <div 
-                      className="absolute inset-0 bg-neutral-950 border border-blood-red/50 hover:border-blood-red rounded-xl p-6 flex flex-col justify-between"
+                      className="absolute inset-0 bg-neutral-950 border border-blood-red/50 hover:border-blood-red rounded-none p-6 flex flex-col justify-between"
                       style={{ 
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
@@ -416,8 +416,8 @@ export default function App() {
           {/* Elegant Horizontal Flow List */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <div className="bg-carbon-gray border border-neutral-900 rounded-xl p-6 hover:border-blood-red/40 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded flex items-center justify-center text-blood-red mb-5">
+            <div className="bg-carbon-gray border border-neutral-900 rounded-none p-6 hover:border-blood-red/40 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded-none flex items-center justify-center text-blood-red mb-5">
                 <ShieldCheck size={20} />
               </div>
               <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide uppercase mb-2">
@@ -428,8 +428,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="bg-carbon-gray border border-neutral-900 rounded-xl p-6 hover:border-blood-red/40 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded flex items-center justify-center text-blood-red mb-5">
+            <div className="bg-carbon-gray border border-neutral-900 rounded-none p-6 hover:border-blood-red/40 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded-none flex items-center justify-center text-blood-red mb-5">
                 <Clock size={20} />
               </div>
               <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide uppercase mb-2">
@@ -440,8 +440,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="bg-carbon-gray border border-neutral-900 rounded-xl p-6 hover:border-blood-red/40 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded flex items-center justify-center text-blood-red mb-5">
+            <div className="bg-carbon-gray border border-neutral-900 rounded-none p-6 hover:border-blood-red/40 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded-none flex items-center justify-center text-blood-red mb-5">
                 <Zap size={20} />
               </div>
               <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide uppercase mb-2">
@@ -452,8 +452,8 @@ export default function App() {
               </p>
             </div>
 
-            <div className="bg-carbon-gray border border-neutral-900 rounded-xl p-6 hover:border-blood-red/40 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded flex items-center justify-center text-blood-red mb-5">
+            <div className="bg-carbon-gray border border-neutral-900 rounded-none p-6 hover:border-blood-red/40 transition-all duration-300 transform hover:-translate-y-1">
+              <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded-none flex items-center justify-center text-blood-red mb-5">
                 <Heart size={20} />
               </div>
               <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide uppercase mb-2">
@@ -488,7 +488,7 @@ export default function App() {
             {REVIEWS_DATA.map((rev) => (
               <div 
                 key={rev.id}
-                className="bg-carbon-gray border border-neutral-900 rounded-xl p-6 hover:border-blood-red/30 transition-all duration-300 flex flex-col justify-between relative group"
+                className="bg-carbon-gray border border-neutral-900 rounded-none p-6 hover:border-blood-red/30 transition-all duration-300 flex flex-col justify-between relative group"
               >
                 {/* Giant quotation visual mark in background */}
                 <div className="absolute right-4 top-4 font-bebas text-5xl text-neutral-800/15 pointer-events-none group-hover:text-blood-red/10 select-none">
@@ -527,7 +527,7 @@ export default function App() {
               href="https://google.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-neutral-950 border border-neutral-900 hover:border-blood-red text-chrome-silver hover:text-steel-white px-5 py-2.5 rounded text-xs font-mono uppercase tracking-wider transition-colors"
+              className="inline-flex items-center gap-2 bg-neutral-950 border border-neutral-900 hover:border-blood-red text-chrome-silver hover:text-steel-white px-5 py-2.5 rounded-none text-xs font-mono uppercase tracking-wider transition-colors"
             >
               <span>Write a Review on Google</span>
               <span className="text-blood-red font-bold">&rarr;</span>
@@ -558,7 +558,7 @@ export default function App() {
 
               {/* SUCCESS MESSAGE */}
               {bookingSuccess && (
-                <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-lg p-5 flex items-start gap-3.5 animate-slide-up">
+                <div className="bg-emerald-950/40 border border-emerald-500/30 rounded-none p-5 flex items-start gap-3.5 animate-slide-up">
                   <CheckCircle className="text-emerald-500 shrink-0 mt-0.5" size={20} />
                   <div className="flex flex-col gap-1">
                     <strong className="font-rajdhani text-sm font-bold text-emerald-400 uppercase tracking-wide">
@@ -573,7 +573,7 @@ export default function App() {
               )}
 
               {/* Form element */}
-              <form onSubmit={handleBookingSubmit} className="flex flex-col gap-5 bg-carbon-gray/30 border border-neutral-900 rounded-xl p-6 md:p-8">
+              <form onSubmit={handleBookingSubmit} className="flex flex-col gap-5 bg-carbon-gray/30 border border-neutral-900 rounded-none p-6 md:p-8">
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-2">
@@ -584,7 +584,7 @@ export default function App() {
                       placeholder="e.g. Justin Chen"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
-                      className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all"
+                      className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded-none px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -595,7 +595,7 @@ export default function App() {
                       placeholder="e.g. 604-555-0199"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                      className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all"
+                      className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded-none px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all"
                     />
                   </div>
                 </div>
@@ -608,7 +608,7 @@ export default function App() {
                       placeholder="e.g. 2021 Toyota Supra A90"
                       value={formData.carDetails}
                       onChange={(e) => setFormData({...formData, carDetails: e.target.value})}
-                      className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all"
+                      className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded-none px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -616,7 +616,7 @@ export default function App() {
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({...formData, service: e.target.value})}
-                      className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded px-3 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all cursor-pointer"
+                      className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded-none px-3 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all cursor-pointer"
                     >
                       <option>ECU Remapping & Performance Tuning</option>
                       <option>Engine Diagnostics & Maintenance</option>
@@ -635,7 +635,7 @@ export default function App() {
                     required
                     value={formData.date}
                     onChange={(e) => setFormData({...formData, date: e.target.value})}
-                    className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all cursor-pointer"
+                    className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded-none px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all cursor-pointer"
                   />
                 </div>
 
@@ -646,13 +646,13 @@ export default function App() {
                     placeholder="Describe specific performance parameters (e.g. Stage 2 burble remapping, track alignment goals)..."
                     value={formData.notes}
                     onChange={(e) => setFormData({...formData, notes: e.target.value})}
-                    className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all resize-none"
+                    className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded-none px-4 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="bg-blood-red hover:bg-red-700 text-steel-white py-3 px-6 text-sm font-rajdhani font-bold tracking-widest uppercase rounded cursor-pointer transition-all active:scale-[0.98] duration-150 flex items-center justify-center gap-2"
+                  className="bg-blood-red hover:bg-red-700 text-steel-white py-3 px-6 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all active:scale-[0.98] duration-150 flex items-center justify-center gap-2"
                 >
                   <Send size={15} />
                   <span>SEND IT →</span>
@@ -666,7 +666,7 @@ export default function App() {
                   <span className="font-mono text-[9px] text-neutral-500 uppercase tracking-widest">ACTIVE SUBMITTED INVOICES (LOCAL SESSION)</span>
                   <div className="space-y-2.5 max-h-[160px] overflow-y-auto">
                     {bookings.map((b) => (
-                      <div key={b.id} className="bg-neutral-950 border border-neutral-900 rounded p-4 flex justify-between items-center text-xs">
+                      <div key={b.id} className="bg-neutral-950 border border-neutral-900 rounded-none p-4 flex justify-between items-center text-xs">
                         <div className="flex flex-col gap-1">
                           <strong className="text-steel-white">{b.name} ({b.carDetails})</strong>
                           <span className="text-chrome-silver font-mono text-[10px]">{b.service}</span>
@@ -676,7 +676,7 @@ export default function App() {
                         </div>
 
                         <div className="flex flex-col items-end gap-1">
-                          <span className="bg-amber-950/50 border border-amber-600/30 text-amber-400 font-mono text-[9px] px-2 py-0.5 rounded uppercase">
+                          <span className="bg-amber-950/50 border border-amber-600/30 text-amber-400 font-mono text-[9px] px-2 py-0.5 rounded-none uppercase">
                             {b.status}
                           </span>
                           <button
@@ -715,7 +715,7 @@ export default function App() {
               </div>
 
               {/* Key Contact Metrics */}
-              <div className="grid grid-cols-2 gap-4 bg-carbon-gray/20 border border-neutral-900/60 p-4 rounded-xl">
+              <div className="grid grid-cols-2 gap-4 bg-carbon-gray/20 border border-neutral-900/60 p-4 rounded-none">
                 <div>
                   <span className="font-mono text-[8px] text-neutral-500 uppercase block">PHONE INTAKE</span>
                   <a href="tel:604-442-8265" className="font-rajdhani text-lg font-bold text-steel-white hover:text-blood-red transition-colors block mt-0.5">
@@ -831,7 +831,7 @@ export default function App() {
         className="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.45)] hover:scale-110 active:scale-95 transition-transform cursor-pointer animate-bounce group"
       >
         <MessageCircle size={24} className="group-hover:rotate-6 transition-transform" />
-        <span className="absolute right-14 top-1/2 -translate-y-1/2 bg-neutral-950/90 text-white font-mono text-[9px] px-2.5 py-1 rounded border border-neutral-900 uppercase tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="absolute right-14 top-1/2 -translate-y-1/2 bg-neutral-950/90 text-white font-mono text-[9px] px-2.5 py-1 rounded-none border border-neutral-900 uppercase tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           Live WhatsApp Support
         </span>
       </a>

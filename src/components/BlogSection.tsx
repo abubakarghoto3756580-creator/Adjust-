@@ -41,7 +41,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
           {BLOG_POSTS_DATA.map((post) => (
             <div
               key={post.id}
-              className="bg-carbon-gray border border-neutral-900 hover:border-blood-red/40 rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 group shadow-lg"
+              className="bg-carbon-gray border border-neutral-900 hover:border-blood-red/40 rounded-none overflow-hidden flex flex-col md:flex-row transition-all duration-300 group shadow-lg"
             >
               {/* Post Cover Image */}
               <div className="md:w-1/2 relative min-h-[260px] md:min-h-[340px] overflow-hidden">
@@ -53,7 +53,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-carbon-gray via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-carbon-gray" />
                 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4 bg-blood-red text-steel-white px-3 py-1 rounded text-[10px] font-mono font-bold tracking-widest uppercase shadow-md">
+                <div className="absolute top-4 left-4 bg-blood-red text-steel-white px-3 py-1 rounded-none text-[10px] font-mono font-bold tracking-widest uppercase shadow-md">
                   {post.category}
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
                     {post.tags.map((tag, idx) => (
                       <span
                         key={idx}
-                        className="bg-neutral-950 border border-neutral-800 text-neutral-400 px-2.5 py-0.5 rounded text-[10px] font-mono"
+                        className="bg-neutral-950 border border-neutral-800 text-neutral-400 px-2.5 py-0.5 rounded-none text-[10px] font-mono"
                       >
                         #{tag}
                       </span>
@@ -104,7 +104,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
                 <div className="border-t border-neutral-900/80 pt-6 mt-6 flex items-center justify-between">
                   <button
                     onClick={() => setSelectedPost(post)}
-                    className="inline-flex items-center gap-2 bg-neutral-950 border border-neutral-800 hover:border-blood-red text-steel-white hover:text-blood-red px-5 py-2.5 rounded text-xs font-mono uppercase tracking-wider transition-all cursor-pointer group-hover:translate-x-1 duration-200"
+                    className="inline-flex items-center gap-2 bg-neutral-950 border border-neutral-800 hover:border-blood-red text-steel-white hover:text-blood-red px-5 py-2.5 rounded-none text-xs font-mono uppercase tracking-wider transition-all cursor-pointer group-hover:translate-x-1 duration-200"
                   >
                     <BookOpen size={14} className="text-blood-red" />
                     <span>READ FULL ARTICLE</span>
@@ -128,7 +128,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
       {/* ARTICLE READER MODAL */}
       {selectedPost && (
         <div className="fixed inset-0 z-50 bg-void-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-6 overflow-y-auto animate-fade-in">
-          <div className="relative bg-carbon-gray border border-neutral-800 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col my-auto">
+          <div className="relative bg-carbon-gray border border-neutral-800 rounded-none w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col my-auto">
             
             {/* Modal Header Bar */}
             <div className="sticky top-0 z-20 bg-carbon-gray/95 border-b border-neutral-800 p-4 md:px-8 flex items-center justify-between backdrop-blur">
@@ -141,14 +141,14 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
               <div className="flex items-center gap-3">
                 <button
                   onClick={handleShare}
-                  className="flex items-center gap-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-chrome-silver text-xs font-mono px-3 py-1.5 rounded transition-colors"
+                  className="flex items-center gap-1.5 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-chrome-silver text-xs font-mono px-3 py-1.5 rounded-none transition-colors"
                 >
                   {copied ? <Check size={13} className="text-emerald-400" /> : <Share2 size={13} />}
                   <span>{copied ? 'COPIED LINK' : 'SHARE'}</span>
                 </button>
                 <button
                   onClick={() => setSelectedPost(null)}
-                  className="p-1.5 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-steel-white border border-neutral-800 transition-colors"
+                  className="p-1.5 rounded-none bg-neutral-900 hover:bg-neutral-800 text-steel-white border border-neutral-800 transition-colors"
                 >
                   <X size={20} />
                 </button>
@@ -160,7 +160,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
               
               {/* Category & Meta */}
               <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-chrome-silver">
-                <span className="bg-blood-red text-steel-white px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">
+                <span className="bg-blood-red text-steel-white px-3 py-1 rounded-none text-[10px] font-bold uppercase tracking-wider">
                   {selectedPost.category}
                 </span>
                 <span className="flex items-center gap-1.5">
@@ -179,7 +179,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
               </h1>
 
               {/* Author Box */}
-              <div className="flex items-center gap-3 bg-neutral-950 border border-neutral-900 rounded-xl p-4">
+              <div className="flex items-center gap-3 bg-neutral-950 border border-neutral-900 rounded-none p-4">
                 <div className="w-10 h-10 rounded-full bg-carbon-gray border border-blood-red flex items-center justify-center font-bebas text-lg text-steel-white">
                   MV
                 </div>
@@ -190,7 +190,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
               </div>
 
               {/* Hero Image */}
-              <div className="rounded-xl overflow-hidden border border-neutral-800 max-h-[400px]">
+              <div className="rounded-none overflow-hidden border border-neutral-800 max-h-[400px]">
                 <img
                   src={selectedPost.coverImage}
                   alt={selectedPost.title}
@@ -213,7 +213,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
                 {selectedPost.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="bg-neutral-950 border border-neutral-800 text-chrome-silver px-3 py-1 rounded text-xs font-mono"
+                    className="bg-neutral-950 border border-neutral-800 text-chrome-silver px-3 py-1 rounded-none text-xs font-mono"
                   >
                     #{tag}
                   </span>
@@ -221,7 +221,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
               </div>
 
               {/* Call To Action Box */}
-              <div className="bg-gradient-to-r from-neutral-950 via-carbon-gray to-neutral-950 border border-blood-red/40 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-4">
+              <div className="bg-gradient-to-r from-neutral-950 via-carbon-gray to-neutral-950 border border-blood-red/40 rounded-none p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-4">
                 <div className="flex flex-col gap-1 text-center md:text-left">
                   <h4 className="font-rajdhani text-xl font-bold text-steel-white uppercase tracking-wider">
                     READY TO UNLOCK YOUR CAR'S POTENTIAL?
@@ -235,7 +235,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
                     setSelectedPost(null);
                     onBookNowClick();
                   }}
-                  className="bg-blood-red hover:bg-red-700 text-steel-white px-8 py-3 text-xs font-rajdhani font-bold tracking-widest uppercase rounded cursor-pointer transition-all hover:scale-105 shrink-0 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
+                  className="bg-blood-red hover:bg-red-700 text-steel-white px-8 py-3 text-xs font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all hover:scale-105 shrink-0 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
                 >
                   BOOK TUNING SESSION
                 </button>

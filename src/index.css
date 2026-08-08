@@ -22,6 +22,11 @@
     font-family: var(--font-sans);
     overflow-x: hidden;
   }
+
+  /* Editorial weight contrast: heavy display headlines vs. light running body copy */
+  p {
+    font-weight: 300;
+  }
 }
 
 /* Custom visual utilities */
