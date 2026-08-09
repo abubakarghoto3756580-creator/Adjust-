@@ -140,10 +140,6 @@ export default function App() {
   return (
     <div className="relative min-h-screen bg-void-black text-steel-white font-sans overflow-x-hidden selection:bg-blood-red selection:text-steel-white">
       
-      {/* Decorative neon ambient top-corner grids */}
-      <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-radial-gradient from-blood-red/10 via-transparent to-transparent pointer-events-none z-0" />
-      <div className="absolute top-[40vh] left-0 w-[30vw] h-[30vw] bg-radial-gradient from-blood-red/5 via-transparent to-transparent pointer-events-none z-0" />
-
       {/* HEADER NAVIGATION */}
       <Header onBookNowClick={handleScrollToBooking} />
 
@@ -221,9 +217,8 @@ export default function App() {
 
         </div>
 
-        {/* Diagonal cut design element separating Hero and Stats */}
-        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-void-black to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 right-0 left-0 h-[2px] bg-blood-red opacity-30 transform rotate-1 scale-105 origin-right" />
+        {/* Hairline divider separating Hero and Stats */}
+        <div className="absolute bottom-0 inset-x-0 h-[2px] bg-blood-red opacity-40" />
       </section>
 
       {/* PHASE 4 — STATS BAR (Trigger scroll count ups) */}
