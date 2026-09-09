@@ -71,6 +71,33 @@
   background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
 }
 
+/* Hero single load-in moment: top line wipes in, headline rises/fades in sync (no other elements animate) */
+@keyframes hero-line-wipe {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes hero-rise-fade {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-line-wipe {
+  transform-origin: left center;
+  animation: hero-line-wipe 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-rise-fade {
+  opacity: 0;
+  animation: hero-rise-fade 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards;
+}
+
+/* Vertical chassis/VIN-plate style badge running along the hero's left edge on desktop */
+.vin-plate-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;

@@ -18,26 +18,26 @@ export default function HeroVisual({ className = '', strongOverlay = false }: He
         <img
           src={JPG_SRC}
           alt="Yas Marina Blue BMW M3 parked front three-quarter under a red LED-lit Shell canopy at night, wet reflective floor"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[62%_38%] lg:object-[70%_50%]"
           loading="eager"
         />
       </picture>
 
-      {/* Bottom fade: transparent at top -> near-black at bottom, so text sitting below/over stays legible */}
-      <div
-        className={`absolute inset-0 bg-gradient-to-t ${
-          strongOverlay
-            ? 'from-void-black via-void-black/75 to-void-black/25'
-            : 'from-void-black via-void-black/30 to-transparent'
-        }`}
-      />
-
-      {/* Left fade: near-black at the edge where the text column sits, fading out toward the car */}
+      {/* Left fade: near-black where the text sits (left third on desktop), fading out toward the car on the right */}
       <div
         className={`absolute inset-0 bg-gradient-to-r ${
           strongOverlay
-            ? 'from-void-black/85 via-void-black/40 to-transparent'
-            : 'from-void-black/70 via-transparent to-transparent'
+            ? 'from-void-black/90 via-void-black/55 to-transparent'
+            : 'from-void-black/85 via-void-black/25 to-transparent'
+        }`}
+      />
+
+      {/* Bottom fade: near-black at the bottom (mobile text zone), transparent toward the top */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-t ${
+          strongOverlay
+            ? 'from-void-black/95 via-void-black/50 to-transparent'
+            : 'from-void-black/40 via-transparent to-transparent'
         }`}
       />
     </div>
