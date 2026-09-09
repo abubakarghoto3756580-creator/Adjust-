@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Loader from './components/Loader';
-import BMWScrollHero from './components/BMWScrollHero';
+import HeroVisual from './components/HeroVisual';
 import BuildCarousel from './components/BuildCarousel';
 import BlogSection from './components/BlogSection';
 import GpsHudMap from './components/GpsHudMap';
@@ -145,6 +145,11 @@ export default function App() {
 
       {/* PHASE 3 — HERO SECTION */}
       <section id="home" ref={heroSectionRef} className="relative min-h-screen pt-24 md:pt-28 flex items-center justify-center overflow-hidden">
+        {/* Mobile: full-bleed BMW hero image as background behind the text (hidden on lg+, where it renders in its own panel instead) */}
+        <div className="absolute inset-0 z-0 lg:hidden">
+          <HeroVisual className="w-full h-full" strongOverlay />
+        </div>
+
         {/* Particle and techy floor guides */}
         <div className="absolute inset-0 carbon-texture opacity-15 pointer-events-none" />
         
@@ -210,9 +215,9 @@ export default function App() {
 
           </div>
 
-          {/* Hero Right Visual — BMW M3 E92 scroll-assembly frame sequence */}
-          <div className="lg:col-span-6 w-full h-[400px] md:h-[500px] relative">
-            <BMWScrollHero />
+          {/* Hero Right Visual — Yas Marina Blue BMW M3 at a Shell station, desktop/tablet two-column panel */}
+          <div className="hidden lg:block lg:col-span-6 w-full h-[400px] md:h-[500px] relative">
+            <HeroVisual className="w-full h-full" />
           </div>
 
         </div>
