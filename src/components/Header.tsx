@@ -57,10 +57,10 @@ export default function Header({ onBookNowClick }: HeaderProps) {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
+      className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-void-black/95 backdrop-blur-md border-b border-carbon-gray py-3 lg:border-b-0 lg:backdrop-blur-none ${
         isScrolled
-          ? 'bg-void-black/90 backdrop-blur-md border-b border-carbon-gray py-3'
-          : 'bg-transparent py-5'
+          ? 'lg:bg-void-black/90 lg:backdrop-blur-md lg:border-b lg:border-carbon-gray lg:py-3'
+          : 'lg:bg-transparent lg:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">

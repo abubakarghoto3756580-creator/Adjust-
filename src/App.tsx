@@ -144,93 +144,179 @@ export default function App() {
       <Header onBookNowClick={handleScrollToBooking} />
 
       {/* PHASE 3 — HERO SECTION */}
-      <section id="home" ref={heroSectionRef} className="relative min-h-screen pt-24 md:pt-28 overflow-hidden">
+      <section id="home" ref={heroSectionRef} className="relative overflow-hidden">
 
-        {/* Full-bleed BMW hero background (all breakpoints) — car focal point pushed right/center, leaving the left clear for text */}
-        <div className="absolute inset-0 z-0">
-          <HeroVisual className="w-full h-full" strongOverlay />
-        </div>
+        {/* ================= MOBILE HERO (< lg) — car gets its own stage, text lives separately below ================= */}
+        <div className="lg:hidden bg-void-black">
 
-        {/* Particle and techy floor guides */}
-        <div className="absolute inset-0 carbon-texture opacity-10 pointer-events-none z-[1]" />
-
-        {/* Desktop: vertical chassis/VIN-plate badge running along the hero's left edge */}
-        <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 z-20 items-center">
-          <div className="border border-neutral-700/70 bg-void-black/50 backdrop-blur-sm px-2 py-4">
-            <span className="vin-plate-vertical font-mono text-[9px] tracking-[0.35em] text-chrome-silver uppercase whitespace-nowrap">
-              BURNABY'S JDM &amp; PERFORMANCE SPECIALISTS
-            </span>
-          </div>
-        </div>
-
-        {/* Content — confined to the left third on desktop (clear of grille/headlights/hood); stacked near the bottom third on mobile */}
-        <div className="relative z-10 w-full min-h-screen flex items-end lg:items-center">
-          <div className="w-full max-w-7xl mx-auto px-4 md:px-8 pb-14 lg:pb-0">
-            <div className="flex flex-col items-start gap-4 w-full sm:max-w-sm lg:w-[38%] lg:max-w-md lg:pl-10">
-
-              {/* Load-in line — mobile: doubles as the thin strip badge above the headline */}
-              <div className="w-full max-w-[260px] lg:max-w-none">
-                <span className="hero-line-wipe block h-[2px] bg-blood-red w-20 md:w-28 mb-2" />
-                <span className="lg:hidden font-mono text-[9px] tracking-[0.3em] text-chrome-silver uppercase block">
-                  BURNABY'S JDM & PERFORMANCE SPECIALISTS
-                </span>
-              </div>
-
-              {/* Headline — three distinct scale levels + inline review stat, single rise/fade with the line above */}
-              <div className="hero-rise-fade flex flex-col items-start gap-1">
-                <span className="font-bebas text-xl md:text-2xl text-chrome-silver tracking-wide uppercase leading-none">
-                  Where your car gets
-                </span>
-                <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl text-steel-white tracking-normal uppercase leading-[0.95]">
-                  DreamVille
-                </h2>
-                <span className="inline-block font-bebas text-lg md:text-xl text-blood-red uppercase border border-blood-red px-3 py-0.5 -rotate-2 neon-glow-red mt-1.5">
-                  Treatment
-                </span>
-
-                {/* Review stat — inline, quiet, no box */}
-                <div className="flex items-center gap-1.5 mt-3">
-                  <div className="flex gap-0.5 text-yellow-500">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={12} fill="currentColor" />
-                    ))}
-                  </div>
-                  <span className="font-mono text-[10px] text-chrome-silver uppercase tracking-wide">
-                    4.9★ · 135+ Google Reviews
-                  </span>
-                </div>
-              </div>
-
-              {/* Description — concrete services + a real credibility number, no vague adjectives */}
-              <p className="text-sm md:text-base text-chrome-silver max-w-md leading-relaxed">
-                AWD dyno tuning, full engine rebuilds, and paint-correction detailing — 
-                handled in-house by the same crew for 10+ years, with most tuning jobs 
-                turned around same-day.
-              </p>
-
-              {/* Hero CTAs */}
-              <div className="flex flex-wrap gap-3.5 mt-2 w-full sm:w-auto">
-                <button
-                  onClick={handleScrollToBooking}
-                  className="flex-1 sm:flex-none text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all hover:scale-105 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
-                >
-                  BOOK APPOINTMENT
-                </button>
-
-                <a
-                  href="tel:604-442-8265"
-                  className="flex-1 sm:flex-none text-center border border-neutral-800 hover:border-blood-red hover:text-blood-red bg-carbon-gray/20 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none transition-colors"
-                >
-                  CALL NOW
-                </a>
-              </div>
-
+          {/* BMW visual stage — full car, no text/buttons/overlay on top of it */}
+          <div className="pt-20 pb-6 flex justify-center bg-void-black">
+            <div className="w-[62%] max-w-[420px]">
+              <picture>
+                <source srcSet="/assets/hero/bmw-m3-mobile.webp" type="image/webp" />
+                <img
+                  src="/assets/hero/bmw-m3-mobile.jpg"
+                  alt="Yas Marina Blue BMW M3, full side and front view, parked at a Shell station at night"
+                  className="w-full h-auto"
+                  loading="eager"
+                />
+              </picture>
             </div>
           </div>
+
+          {/* Clean transition from the visual stage into the content stage */}
+          <div className="h-8 bg-gradient-to-b from-void-black to-carbon-gray/30" />
+
+          {/* Content stage — everything text/CTA lives here, never over the car */}
+          <div className="bg-void-black px-6 pt-2 pb-10 flex flex-col items-start">
+
+            {/* Load-in line, doubling as the thin strip badge above the headline */}
+            <div className="w-full max-w-[260px]">
+              <span className="hero-line-wipe block h-[2px] bg-blood-red w-20 mb-2" />
+              <span className="font-mono text-[9px] tracking-[0.3em] text-chrome-silver uppercase block">
+                BURNABY'S JDM & PERFORMANCE SPECIALISTS
+              </span>
+            </div>
+
+            {/* Headline — three scale levels */}
+            <div className="hero-rise-fade flex flex-col items-start gap-1 mt-4">
+              <span className="font-bebas text-xl text-chrome-silver tracking-wide uppercase leading-none">
+                Where your car gets
+              </span>
+              <h2 className="font-bebas text-5xl text-steel-white uppercase leading-[0.95]">
+                DreamVille
+              </h2>
+              <span className="inline-block font-bebas text-lg text-blood-red uppercase border border-blood-red px-3 py-0.5 -rotate-2 neon-glow-red mt-1.5">
+                Treatment
+              </span>
+            </div>
+
+            {/* Description — concrete services + a real credibility number */}
+            <p className="text-sm text-chrome-silver leading-relaxed mt-4 max-w-sm">
+              AWD dyno tuning, full engine rebuilds, and paint-correction detailing — 
+              handled in-house by the same crew for 10+ years, with most tuning jobs 
+              turned around same-day.
+            </p>
+
+            {/* Review stat — clean horizontal row, secondary to the car and headline */}
+            <div className="flex items-center gap-2 mt-5">
+              <div className="flex gap-0.5 text-yellow-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} fill="currentColor" />
+                ))}
+              </div>
+              <span className="font-mono text-[11px] text-chrome-silver uppercase tracking-wide">
+                4.9 · 135+ Google Reviews
+              </span>
+            </div>
+
+            {/* CTAs — stacked (narrow mobile), side-by-side once there's room */}
+            <div className="flex flex-col sm:flex-row gap-3 mt-6 w-full">
+              <button
+                onClick={handleScrollToBooking}
+                className="flex-1 text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-4 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all active:scale-95 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
+              >
+                BOOK APPOINTMENT
+              </button>
+
+              <a
+                href="tel:604-442-8265"
+                className="flex-1 text-center border border-neutral-800 hover:border-blood-red hover:text-blood-red bg-carbon-gray/20 text-steel-white px-8 py-4 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none transition-colors"
+              >
+                CALL NOW
+              </a>
+            </div>
+
+          </div>
         </div>
 
-        {/* Hairline divider separating Hero and Stats */}
-        <div className="absolute bottom-0 inset-x-0 h-[2px] bg-blood-red opacity-40 z-10" />
+        {/* ================= DESKTOP / TABLET HERO (lg+) — unchanged full-bleed composition ================= */}
+        <div className="hidden lg:block relative min-h-screen pt-28 overflow-hidden">
+
+          {/* Full-bleed BMW hero background — car focal point pushed right/center, leaving the left clear for text */}
+          <div className="absolute inset-0 z-0">
+            <HeroVisual className="w-full h-full" strongOverlay />
+          </div>
+
+          {/* Particle and techy floor guides */}
+          <div className="absolute inset-0 carbon-texture opacity-10 pointer-events-none z-[1]" />
+
+          {/* Vertical chassis/VIN-plate badge running along the hero's left edge */}
+          <div className="flex absolute left-6 top-1/2 -translate-y-1/2 z-20 items-center">
+            <div className="border border-neutral-700/70 bg-void-black/50 backdrop-blur-sm px-2 py-4">
+              <span className="vin-plate-vertical font-mono text-[9px] tracking-[0.35em] text-chrome-silver uppercase whitespace-nowrap">
+                BURNABY'S JDM &amp; PERFORMANCE SPECIALISTS
+              </span>
+            </div>
+          </div>
+
+          {/* Content — confined to the left third, clear of grille/headlights/hood */}
+          <div className="relative z-10 w-full min-h-screen flex items-center">
+            <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
+              <div className="flex flex-col items-start gap-4 w-[38%] max-w-md pl-10">
+
+                {/* Load-in line */}
+                <span className="hero-line-wipe block h-[2px] bg-blood-red w-28 mb-2" />
+
+                {/* Headline — three distinct scale levels + inline review stat, single rise/fade with the line above */}
+                <div className="hero-rise-fade flex flex-col items-start gap-1">
+                  <span className="font-bebas text-2xl text-chrome-silver tracking-wide uppercase leading-none">
+                    Where your car gets
+                  </span>
+                  <h2 className="font-bebas text-6xl text-steel-white tracking-normal uppercase leading-[0.95]">
+                    DreamVille
+                  </h2>
+                  <span className="inline-block font-bebas text-xl text-blood-red uppercase border border-blood-red px-3 py-0.5 -rotate-2 neon-glow-red mt-1.5">
+                    Treatment
+                  </span>
+
+                  {/* Review stat — inline, quiet, no box */}
+                  <div className="flex items-center gap-1.5 mt-3">
+                    <div className="flex gap-0.5 text-yellow-500">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={12} fill="currentColor" />
+                      ))}
+                    </div>
+                    <span className="font-mono text-[10px] text-chrome-silver uppercase tracking-wide">
+                      4.9★ · 135+ Google Reviews
+                    </span>
+                  </div>
+                </div>
+
+                {/* Description — concrete services + a real credibility number, no vague adjectives */}
+                <p className="text-base text-chrome-silver max-w-md leading-relaxed">
+                  AWD dyno tuning, full engine rebuilds, and paint-correction detailing — 
+                  handled in-house by the same crew for 10+ years, with most tuning jobs 
+                  turned around same-day.
+                </p>
+
+                {/* Hero CTAs */}
+                <div className="flex flex-wrap gap-3.5 mt-2">
+                  <button
+                    onClick={handleScrollToBooking}
+                    className="text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all hover:scale-105 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
+                  >
+                    BOOK APPOINTMENT
+                  </button>
+
+                  <a
+                    href="tel:604-442-8265"
+                    className="text-center border border-neutral-800 hover:border-blood-red hover:text-blood-red bg-carbon-gray/20 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none transition-colors"
+                  >
+                    CALL NOW
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Hairline divider separating Hero and Stats (desktop) */}
+          <div className="absolute bottom-0 inset-x-0 h-[2px] bg-blood-red opacity-40 z-10" />
+        </div>
+
+        {/* Hairline divider separating Hero and Stats (mobile) */}
+        <div className="lg:hidden h-[2px] bg-blood-red opacity-40" />
       </section>
 
       {/* PHASE 4 — STATS BAR (Trigger scroll count ups) */}
@@ -835,7 +921,8 @@ export default function App() {
         href="https://wa.me/16044428265"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.45)] hover:scale-110 active:scale-95 transition-transform cursor-pointer animate-bounce group"
+        style={{ bottom: 'max(1.25rem, env(safe-area-inset-bottom))' }}
+        className="fixed right-5 sm:right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.45)] hover:scale-110 active:scale-95 transition-transform cursor-pointer animate-bounce group"
       >
         <MessageCircle size={24} className="group-hover:rotate-6 transition-transform" />
         <span className="absolute right-14 top-1/2 -translate-y-1/2 bg-neutral-950/90 text-white font-mono text-[9px] px-2.5 py-1 rounded-none border border-neutral-900 uppercase tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
