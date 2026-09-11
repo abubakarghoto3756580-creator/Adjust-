@@ -146,31 +146,30 @@ export default function App() {
       {/* PHASE 3 — HERO SECTION */}
       <section id="home" ref={heroSectionRef} className="relative overflow-hidden">
 
-        {/* ================= MOBILE HERO (< lg) — car gets its own stage, text lives separately below ================= */}
-        <div className="lg:hidden bg-void-black">
+        {/* ================= MOBILE HERO (< lg) — single section: car as full background, text anchored at the top ================= */}
+        <div className="lg:hidden relative overflow-hidden min-h-[660px] flex flex-col">
 
-          {/* BMW visual stage — bigger, centered card; full car, no text/buttons on top of it */}
-          <div className="pt-20 pb-4 flex justify-center bg-void-black">
-            <div className="w-[82%] max-w-[440px] border border-neutral-800/70 bg-carbon-gray/10 p-2">
-              <picture>
-                <source srcSet="/assets/hero/bmw-m3-mobile.webp" type="image/webp" />
-                <img
-                  src="/assets/hero/bmw-m3-mobile.jpg"
-                  alt="Yas Marina Blue BMW M3, full side and front view, parked at a Shell station at night"
-                  className="w-full h-auto"
-                  loading="eager"
-                />
-              </picture>
-            </div>
+          {/* Full-bleed car background — front three-quarter kept in frame, sky/canopy up top for the text */}
+          <div className="absolute inset-0 z-0">
+            <picture>
+              <source srcSet="/assets/hero/bmw-m3-shell.webp" type="image/webp" />
+              <img
+                src="/assets/hero/bmw-m3-shell.jpg"
+                alt="Yas Marina Blue BMW M3 parked front three-quarter under a red LED-lit Shell canopy at night"
+                className="absolute inset-0 w-full h-full object-cover object-[45%_50%]"
+                loading="eager"
+              />
+            </picture>
+            {/* Top-down dark fade so the text block stays legible; eases off toward the car below */}
+            <div className="absolute inset-0 bg-gradient-to-b from-void-black via-void-black/60 to-transparent" />
+            {/* Gentle bottom fade so the CTA row still reads clearly over the floor/reflection */}
+            <div className="absolute inset-0 bg-gradient-to-t from-void-black/75 via-transparent to-transparent" />
           </div>
 
-          {/* Clean transition from the visual stage into the content stage */}
-          <div className="h-8 bg-gradient-to-b from-void-black to-carbon-gray/30" />
+          {/* Content — anchored to the top of the section, overlapping the image */}
+          <div className="relative z-10 pt-20 px-6 pb-8 flex flex-col items-center text-center">
 
-          {/* Content stage — everything text/CTA lives here, never over the car */}
-          <div className="bg-void-black px-6 pt-2 pb-10 flex flex-col items-center text-center">
-
-            {/* Load-in line, doubling as the thin strip badge above the headline */}
+            {/* Load-in line + eyebrow strip */}
             <div className="w-full max-w-[260px] flex flex-col items-center">
               <span className="hero-line-wipe block h-[2px] bg-blood-red w-20 mb-2" />
               <span className="font-mono text-[9px] tracking-[0.3em] text-chrome-silver uppercase block">
@@ -198,7 +197,7 @@ export default function App() {
               turned around same-day.
             </p>
 
-            {/* Review stat — clean horizontal row, secondary to the car and headline */}
+            {/* Review stat — clean horizontal row, secondary to the headline */}
             <div className="flex items-center justify-center gap-2 mt-5">
               <div className="flex gap-0.5 text-yellow-500">
                 {[...Array(5)].map((_, i) => (
@@ -209,24 +208,23 @@ export default function App() {
                 4.9 · 135+ Google Reviews
               </span>
             </div>
+          </div>
 
-            {/* CTAs — stacked (narrow mobile), side-by-side once there's room */}
-            <div className="flex flex-col sm:flex-row gap-3 mt-6 w-full">
-              <button
-                onClick={handleScrollToBooking}
-                className="flex-1 text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-4 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all active:scale-95 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
-              >
-                BOOK APPOINTMENT
-              </button>
+          {/* CTAs — pinned toward the bottom of the same overlapping section */}
+          <div className="relative z-10 mt-auto px-6 pb-8 flex flex-col sm:flex-row gap-3">
+            <button
+              onClick={handleScrollToBooking}
+              className="flex-1 text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-4 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all active:scale-95 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
+            >
+              BOOK APPOINTMENT
+            </button>
 
-              <a
-                href="tel:604-442-8265"
-                className="flex-1 text-center border border-neutral-800 hover:border-blood-red hover:text-blood-red bg-carbon-gray/20 text-steel-white px-8 py-4 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none transition-colors"
-              >
-                CALL NOW
-              </a>
-            </div>
-
+            <a
+              href="tel:604-442-8265"
+              className="flex-1 text-center border border-neutral-700 hover:border-blood-red hover:text-blood-red bg-void-black/50 backdrop-blur-sm text-steel-white px-8 py-4 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none transition-colors"
+            >
+              CALL NOW
+            </a>
           </div>
         </div>
 
