@@ -149,9 +149,9 @@ export default function App() {
         {/* ================= MOBILE HERO (< lg) — car gets its own stage, text lives separately below ================= */}
         <div className="lg:hidden bg-void-black">
 
-          {/* BMW visual stage — full car, no text/buttons/overlay on top of it */}
-          <div className="pt-20 pb-6 flex justify-center bg-void-black">
-            <div className="w-[62%] max-w-[420px]">
+          {/* BMW visual stage — bigger, centered card; full car, no text/buttons on top of it */}
+          <div className="pt-20 pb-4 flex justify-center bg-void-black">
+            <div className="w-[82%] max-w-[440px] border border-neutral-800/70 bg-carbon-gray/10 p-2">
               <picture>
                 <source srcSet="/assets/hero/bmw-m3-mobile.webp" type="image/webp" />
                 <img
@@ -168,10 +168,10 @@ export default function App() {
           <div className="h-8 bg-gradient-to-b from-void-black to-carbon-gray/30" />
 
           {/* Content stage — everything text/CTA lives here, never over the car */}
-          <div className="bg-void-black px-6 pt-2 pb-10 flex flex-col items-start">
+          <div className="bg-void-black px-6 pt-2 pb-10 flex flex-col items-center text-center">
 
             {/* Load-in line, doubling as the thin strip badge above the headline */}
-            <div className="w-full max-w-[260px]">
+            <div className="w-full max-w-[260px] flex flex-col items-center">
               <span className="hero-line-wipe block h-[2px] bg-blood-red w-20 mb-2" />
               <span className="font-mono text-[9px] tracking-[0.3em] text-chrome-silver uppercase block">
                 BURNABY'S JDM & PERFORMANCE SPECIALISTS
@@ -179,11 +179,11 @@ export default function App() {
             </div>
 
             {/* Headline — three scale levels */}
-            <div className="hero-rise-fade flex flex-col items-start gap-1 mt-4">
+            <div className="hero-rise-fade flex flex-col items-center gap-1 mt-4">
               <span className="font-bebas text-xl text-chrome-silver tracking-wide uppercase leading-none">
                 Where your car gets
               </span>
-              <h2 className="font-bebas text-5xl text-steel-white uppercase leading-[0.95]">
+              <h2 className="font-bebas text-6xl text-steel-white uppercase leading-[0.95]">
                 DreamVille
               </h2>
               <span className="inline-block font-bebas text-lg text-blood-red uppercase border border-blood-red px-3 py-0.5 -rotate-2 neon-glow-red mt-1.5">
@@ -199,7 +199,7 @@ export default function App() {
             </p>
 
             {/* Review stat — clean horizontal row, secondary to the car and headline */}
-            <div className="flex items-center gap-2 mt-5">
+            <div className="flex items-center justify-center gap-2 mt-5">
               <div className="flex gap-0.5 text-yellow-500">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={14} fill="currentColor" />
