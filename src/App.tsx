@@ -147,21 +147,21 @@ export default function App() {
       <section id="home" ref={heroSectionRef} className="relative overflow-hidden">
 
         {/* ================= MOBILE HERO (< lg) — single section: car as full background, text anchored at the top ================= */}
-        <div className="lg:hidden relative overflow-hidden min-h-[660px] flex flex-col">
+        <div className="lg:hidden relative overflow-hidden min-h-[720px] flex flex-col">
 
-          {/* Full-bleed car background — front three-quarter kept in frame, sky/canopy up top for the text */}
+          {/* Full-bleed car background — dedicated portrait crop with a built-in dark-sky zone up top, so text never lands on the car */}
           <div className="absolute inset-0 z-0">
             <picture>
-              <source srcSet="/assets/hero/bmw-m3-shell.webp" type="image/webp" />
+              <source srcSet="/assets/hero/bmw-m3-mobile-portrait.webp" type="image/webp" />
               <img
-                src="/assets/hero/bmw-m3-shell.jpg"
+                src="/assets/hero/bmw-m3-mobile-portrait.jpg"
                 alt="Yas Marina Blue BMW M3 parked front three-quarter under a red LED-lit Shell canopy at night"
-                className="absolute inset-0 w-full h-full object-cover object-[45%_50%]"
+                className="absolute inset-0 w-full h-full object-cover object-[50%_50%]"
                 loading="eager"
               />
             </picture>
             {/* Top-down dark fade so the text block stays legible; eases off toward the car below */}
-            <div className="absolute inset-0 bg-gradient-to-b from-void-black via-void-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-void-black via-void-black/50 to-transparent" />
             {/* Gentle bottom fade so the CTA row still reads clearly over the floor/reflection */}
             <div className="absolute inset-0 bg-gradient-to-t from-void-black/75 via-transparent to-transparent" />
           </div>
@@ -211,7 +211,7 @@ export default function App() {
           </div>
 
           {/* CTAs — pinned toward the bottom of the same overlapping section */}
-          <div className="relative z-10 mt-auto px-6 pb-8 flex flex-col sm:flex-row gap-3">
+          <div className="relative z-10 mt-auto px-6 pb-8 flex flex-col sm:flex-row gap-4">
             <button
               onClick={handleScrollToBooking}
               className="btn-primary flex-1"
