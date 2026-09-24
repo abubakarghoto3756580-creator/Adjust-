@@ -38,6 +38,65 @@
   box-shadow: 0 0 15px rgba(196, 30, 30, 0.3);
 }
 
+/* ==========================================================================
+   Shared button system — consolidates the site's button styling into 3
+   variants (primary / secondary / text-link) instead of ad-hoc one-offs.
+   ========================================================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-blood-red);
+  color: var(--color-steel-white);
+  padding: 0.875rem 2rem;
+  font-family: var(--font-rajdhani);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 0 15px rgba(196, 30, 30, 0.4);
+}
+.btn-primary:hover { background-color: #a51414; transform: scale(1.03); }
+.btn-primary:active { transform: scale(0.97); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: rgba(26, 26, 26, 0.4);
+  color: var(--color-steel-white);
+  border: 1px solid #262626;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-rajdhani);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-radius: 0;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.btn-secondary:hover { border-color: var(--color-blood-red); color: var(--color-blood-red); }
+
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-blood-red);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.btn-text:hover { opacity: 0.75; text-decoration: underline; }
+
 .box-glow-red-heavy {
   box-shadow: 0 0 25px rgba(196, 30, 30, 0.6), inset 0 0 15px rgba(196, 30, 30, 0.2);
 }
@@ -92,11 +151,7 @@
   animation: hero-rise-fade 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.12s forwards;
 }
 
-/* Vertical chassis/VIN-plate style badge running along the hero's left edge on desktop */
-.vin-plate-vertical {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
+/* Vertical chassis/VIN-plate utility retained for potential future decorative use */
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {

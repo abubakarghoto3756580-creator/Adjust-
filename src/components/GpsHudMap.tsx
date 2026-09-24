@@ -39,7 +39,7 @@ export default function GpsHudMap() {
     <div className="relative w-full h-full min-h-[350px] flex flex-col border border-neutral-900 rounded-none bg-neutral-950 overflow-hidden box-glow-red">
       
       {/* GPS Header HUD strip */}
-      <div className="bg-[#0b0b0b] border-b border-neutral-900 p-3.5 flex items-center justify-between font-mono text-[10px] text-chrome-silver">
+      <div className="bg-[#0b0b0b] border-b border-neutral-900 p-3.5 flex items-center justify-between font-mono text-xs text-chrome-silver">
         <div className="flex items-center gap-2">
           <Compass size={12} className="text-blood-red animate-spin" style={{ animationDuration: '8s' }} />
           <span className="font-bold tracking-widest text-blood-red">GPS FEED — LIVE RADAR</span>
@@ -55,7 +55,7 @@ export default function GpsHudMap() {
         
         {/* Futuristic Grid Overlay */}
         <div 
-          className="absolute inset-0 opacity-15 pointer-events-none"
+          className="absolute inset-0 opacity-25 pointer-events-none"
           style={{
             backgroundImage: `
               linear-gradient(to right, #c41e1e 1px, transparent 1px),
@@ -121,7 +121,7 @@ export default function GpsHudMap() {
                 </div>
 
                 {/* Micro Label above pointer */}
-                <span className={`absolute bottom-8 px-2 py-1 rounded-none bg-[#0b0b0b]/95 border border-neutral-900 font-mono text-[9px] tracking-wider text-steel-white shadow-2xl whitespace-nowrap transition-all opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 ${isSelected ? 'opacity-100 scale-100 border-blood-red/30' : ''}`}>
+                <span className={`absolute bottom-8 px-2 py-1 rounded-none bg-[#0b0b0b]/95 border border-neutral-900 font-mono text-xs tracking-wider text-steel-white shadow-2xl whitespace-nowrap transition-all opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 ${isSelected ? 'opacity-100 scale-100 border-blood-red/30' : ''}`}>
                   {loc.id === 'shop' ? '★ DREAMVILLE' : loc.name}
                 </span>
               </button>
@@ -134,13 +134,13 @@ export default function GpsHudMap() {
           {(() => {
             const current = locations.find((l) => l.id === activePin) || locations[0];
             return (
-              <div className="flex flex-col gap-1.5 font-mono text-[10px]">
+              <div className="flex flex-col gap-1.5 font-mono text-xs">
                 <div className="flex items-center gap-1.5 text-blood-red">
                   <span className="w-1.5 h-1.5 rounded-full bg-blood-red animate-ping" />
                   <span className="font-bold uppercase tracking-wider">{current.name}</span>
                 </div>
-                <p className="text-chrome-silver text-[9px] leading-relaxed">{current.desc}</p>
-                <div className="flex justify-between items-center border-t border-neutral-900 pt-1.5 mt-1 text-neutral-500 text-[8px]">
+                <p className="text-chrome-silver text-xs leading-relaxed">{current.desc}</p>
+                <div className="flex justify-between items-center border-t border-neutral-900 pt-1.5 mt-1 text-neutral-500 text-xs">
                   <span>LAT / LNG:</span>
                   <span className="text-steel-white">{current.coords}</span>
                 </div>
@@ -168,7 +168,7 @@ export default function GpsHudMap() {
       </div>
 
       {/* Address HUD label */}
-      <div className="bg-[#080808] border-t border-neutral-900 p-3.5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 font-mono text-[10px] text-chrome-silver">
+      <div className="bg-[#080808] border-t border-neutral-900 p-3.5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 font-mono text-xs text-chrome-silver">
         <div className="flex items-center gap-2">
           <Navigation size={12} className="text-blood-red" />
           <span>ADDRESS LOCK: <strong className="text-steel-white">6432 Beresford St, Burnaby, BC V5E 1B6</strong></span>
@@ -177,7 +177,7 @@ export default function GpsHudMap() {
           href="https://maps.google.com/?q=6432+Beresford+St,+Burnaby,+BC"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blood-red hover:underline font-bold"
+          className="btn-secondary !py-2 !px-4 !text-xs shrink-0"
         >
           OPEN IN GOOGLE MAPS →
         </a>

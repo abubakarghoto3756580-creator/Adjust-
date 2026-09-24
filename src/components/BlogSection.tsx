@@ -53,7 +53,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-carbon-gray via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-carbon-gray" />
                 
                 {/* Category Badge */}
-                <div className="absolute top-4 left-4 bg-blood-red text-steel-white px-3 py-1 rounded-none text-[10px] font-mono font-bold tracking-widest uppercase shadow-md">
+                <div className="absolute top-4 left-4 bg-blood-red text-steel-white px-3 py-1 rounded-none text-xs font-mono font-bold tracking-widest uppercase shadow-md">
                   {post.category}
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
                     {post.tags.map((tag, idx) => (
                       <span
                         key={idx}
-                        className="bg-neutral-950 border border-neutral-800 text-neutral-400 px-2.5 py-0.5 rounded-none text-[10px] font-mono"
+                        className="bg-neutral-950 border border-neutral-800 text-neutral-400 px-2.5 py-0.5 rounded-none text-xs font-mono"
                       >
                         #{tag}
                       </span>
@@ -113,7 +113,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
 
                   <button
                     onClick={onBookNowClick}
-                    className="hidden sm:inline-flex text-[11px] font-mono text-blood-red hover:underline tracking-wider uppercase"
+                    className="btn-secondary hidden sm:inline-flex !py-2.5 !px-5"
                   >
                     BOOK TUNING SESSION &rarr;
                   </button>
@@ -160,7 +160,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
               
               {/* Category & Meta */}
               <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-chrome-silver">
-                <span className="bg-blood-red text-steel-white px-3 py-1 rounded-none text-[10px] font-bold uppercase tracking-wider">
+                <span className="bg-blood-red text-steel-white px-3 py-1 rounded-none text-xs font-bold uppercase tracking-wider">
                   {selectedPost.category}
                 </span>
                 <span className="flex items-center gap-1.5">
@@ -174,9 +174,9 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
               </div>
 
               {/* Title */}
-              <h1 className="font-rajdhani text-3xl md:text-5xl font-extrabold text-steel-white leading-tight">
+              <h2 className="font-rajdhani text-3xl md:text-5xl font-extrabold text-steel-white leading-tight">
                 {selectedPost.title}
-              </h1>
+              </h2>
 
               {/* Author Box */}
               <div className="flex items-center gap-3 bg-neutral-950 border border-neutral-900 rounded-none p-4">
@@ -185,7 +185,7 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-rajdhani text-sm font-bold text-steel-white">{selectedPost.author}</span>
-                  <span className="font-mono text-[10px] text-blood-red uppercase tracking-wider">{selectedPost.authorTitle}</span>
+                  <span className="font-mono text-xs text-blood-red uppercase tracking-wider">{selectedPost.authorTitle}</span>
                 </div>
               </div>
 
@@ -223,9 +223,9 @@ export default function BlogSection({ onBookNowClick }: BlogSectionProps) {
               {/* Call To Action Box */}
               <div className="bg-gradient-to-r from-neutral-950 via-carbon-gray to-neutral-950 border border-blood-red/40 rounded-none p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 mt-4">
                 <div className="flex flex-col gap-1 text-center md:text-left">
-                  <h4 className="font-rajdhani text-xl font-bold text-steel-white uppercase tracking-wider">
+                  <h3 className="font-rajdhani text-xl font-bold text-steel-white uppercase tracking-wider">
                     READY TO UNLOCK YOUR CAR'S POTENTIAL?
-                  </h4>
+                  </h3>
                   <p className="text-xs text-chrome-silver">
                     Schedule a custom dyno session or diagnostic remapping with our calibration engineers today.
                   </p>

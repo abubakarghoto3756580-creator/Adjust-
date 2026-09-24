@@ -111,7 +111,7 @@ export default function Header({ onBookNowClick }: HeaderProps) {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:604-442-8265"
-            className="flex items-center gap-1.5 font-mono text-[11px] text-chrome-silver hover:text-steel-white transition-colors border border-neutral-900 px-3 py-1.5 rounded-none bg-carbon-gray/20"
+            className="flex items-center gap-1.5 font-mono text-xs text-chrome-silver hover:text-steel-white transition-colors border border-neutral-900 px-3 py-1.5 rounded-none bg-carbon-gray/20"
           >
             <Phone size={11} className="text-blood-red" />
             <span>604-442-8265</span>
@@ -129,7 +129,7 @@ export default function Header({ onBookNowClick }: HeaderProps) {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={onBookNowClick}
-            className="bg-blood-red text-steel-white px-3 py-1.5 text-[10px] font-rajdhani font-bold tracking-wider uppercase rounded-none"
+            className="bg-blood-red text-steel-white px-3 py-1.5 text-xs font-rajdhani font-bold tracking-wider uppercase rounded-none"
           >
             BOOK
           </button>
@@ -171,15 +171,15 @@ export default function Header({ onBookNowClick }: HeaderProps) {
         {/* Mobile Info Box */}
         <div className="mt-auto bg-carbon-gray/30 border border-neutral-900 rounded-none p-4 flex flex-col gap-3">
           <div>
-            <span className="font-mono text-[9px] text-chrome-silver uppercase block">Location</span>
+            <span className="font-mono text-xs text-chrome-silver uppercase block">Location</span>
             <p className="font-rajdhani text-sm text-steel-white font-semibold">📍 6432 Beresford St, Burnaby BC</p>
           </div>
           <div>
-            <span className="font-mono text-[9px] text-chrome-silver uppercase block">Call Now</span>
+            <span className="font-mono text-xs text-chrome-silver uppercase block">Call Now</span>
             <a href="tel:604-442-8265" className="font-mono text-sm text-blood-red font-bold">📞 604-442-8265</a>
           </div>
           <div>
-            <span className="font-mono text-[9px] text-chrome-silver uppercase block">Operating Hours</span>
+            <span className="font-mono text-xs text-chrome-silver uppercase block">Operating Hours</span>
             <p className="font-sans text-xs text-chrome-silver">Mon-Sat: 11 AM - 9 PM · Sun: 12 PM - 7 PM</p>
           </div>
         </div>

@@ -98,7 +98,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         
         {/* Animated Brand Header */}
         <div className="mb-6 flex flex-col items-center">
-          <span className="font-mono text-[10px] tracking-[0.35em] text-blood-red uppercase animate-pulse">
+          <span className="font-mono text-xs tracking-[0.35em] text-blood-red uppercase animate-pulse">
             HIGH PERFORMANCE GARAGE
           </span>
           <img
@@ -145,7 +145,7 @@ export default function Loader({ onComplete }: LoaderProps) {
                 <span className="font-bebas text-5xl text-steel-white tracking-wider">
                   {progress}%
                 </span>
-                <span className="font-mono text-[10px] tracking-widest text-chrome-silver uppercase mt-1 animate-pulse">
+                <span className="font-mono text-xs tracking-widest text-chrome-silver uppercase mt-1 animate-pulse">
                   System Check
                 </span>
               </div>
@@ -154,7 +154,7 @@ export default function Loader({ onComplete }: LoaderProps) {
                 <span className="font-bebas text-5xl text-blood-red neon-glow-red tracking-wider">
                   {rpmValue}
                 </span>
-                <span className="font-mono text-[10px] tracking-widest text-chrome-silver uppercase mt-1">
+                <span className="font-mono text-xs tracking-widest text-chrome-silver uppercase mt-1">
                   RPM LIMITER
                 </span>
               </div>
@@ -167,7 +167,7 @@ export default function Loader({ onComplete }: LoaderProps) {
                 <span className="font-bebas text-3xl md:text-4xl text-steel-white tracking-widest leading-none">
                   IGNITION
                 </span>
-                <span className="font-mono text-[9px] tracking-widest text-steel-white/70 uppercase mt-1 group-hover:scale-105 transition-transform">
+                <span className="font-mono text-xs tracking-widest text-steel-white/70 uppercase mt-1 group-hover:scale-105 transition-transform">
                   TAP TO START
                 </span>
               </button>
@@ -176,13 +176,13 @@ export default function Loader({ onComplete }: LoaderProps) {
         </div>
 
         {/* Secondary Diagnostics Status Box */}
-        <div className="w-full bg-carbon-gray/50 border border-neutral-900 rounded-none p-4 font-mono text-[11px] text-left text-chrome-silver">
+        <div className="w-full bg-carbon-gray/50 border border-neutral-900 rounded-none p-4 font-mono text-xs text-left text-chrome-silver">
           <div className="flex items-center justify-between border-b border-neutral-900 pb-2 mb-2">
             <div className="flex items-center gap-1.5 text-blood-red">
               <span className="w-1.5 h-1.5 rounded-full bg-blood-red animate-ping" />
               <span className="font-bold tracking-wider uppercase">ECU DIAL_LOG</span>
             </div>
-            <span className="text-[10px] uppercase text-neutral-600">SYS_V2.0</span>
+            <span className="text-xs uppercase text-neutral-600">SYS_V2.0</span>
           </div>
 
           <div className="space-y-1.5 max-h-[80px] overflow-y-auto">
@@ -196,7 +196,7 @@ export default function Loader({ onComplete }: LoaderProps) {
         </div>
 
         {/* Feature Icons Footer */}
-        <div className="flex gap-6 items-center justify-center mt-6 text-neutral-700 font-mono text-[10px] uppercase tracking-wider">
+        <div className="flex gap-6 items-center justify-center mt-6 text-neutral-700 font-mono text-xs uppercase tracking-wider">
           <div className="flex items-center gap-1">
             <ShieldCheck size={12} className="text-blood-red" />
             <span>OBD-II Verified</span>

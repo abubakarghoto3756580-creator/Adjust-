@@ -27,7 +27,7 @@ export default function BuildCarousel() {
     <div className="flex flex-col gap-8 w-full">
       
       {/* Category Filter Tabs */}
-      <div className="flex flex-wrap gap-6 justify-center items-center border-b border-neutral-900">
+      <div className="flex flex-wrap gap-3 justify-center items-center">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -35,16 +35,13 @@ export default function BuildCarousel() {
               setFilter(cat);
               setCurrentIndex(0);
             }}
-            className={`relative pb-3 font-mono text-xs tracking-[1.5px] uppercase transition-colors ${
+            className={`px-4 py-2 rounded-full border font-mono text-xs tracking-[1.5px] uppercase transition-colors ${
               filter === cat
-                ? 'text-steel-white'
-                : 'text-chrome-silver hover:text-steel-white'
+                ? 'bg-blood-red border-blood-red text-steel-white'
+                : 'bg-carbon-gray/40 border-neutral-800 text-chrome-silver hover:border-blood-red hover:text-steel-white'
             }`}
           >
             {cat}
-            {filter === cat && (
-              <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-blood-red" />
-            )}
           </button>
         ))}
       </div>
@@ -70,7 +67,7 @@ export default function BuildCarousel() {
               if (absOffset > 2) return null;
 
               // Compute 3D values
-              const translateVal = offset * 260; // Distance
+              const translateVal = offset * 380; // Distance — wide enough that adjacent cards (up to 360px) don't overlap
               const rotateVal = offset * -25;    // Tilt back
               const scaleVal = 1 - absOffset * 0.15; // Scale down
               const zIndexVal = 10 - absOffset;      // Depth ordering
@@ -104,21 +101,21 @@ export default function BuildCarousel() {
                   <div className="absolute inset-0 bg-gradient-to-t from-void-black via-void-black/30 to-transparent pointer-events-none" />
 
                   {/* Top Category Badge */}
-                  <span className="absolute top-4 left-4 bg-void-black/80 backdrop-blur-md border border-neutral-900 font-mono text-[9px] text-blood-red px-2.5 py-1 rounded-none uppercase tracking-widest font-semibold">
+                  <span className="absolute top-4 left-4 bg-void-black/80 backdrop-blur-md border border-neutral-900 font-mono text-xs text-blood-red px-2.5 py-1 rounded-none uppercase tracking-widest font-semibold">
                     {build.category}
                   </span>
 
                   {/* Bottom Text Panel */}
                   <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-void-black to-void-black/0 flex flex-col gap-1.5 pointer-events-none">
-                    <h4 className="font-bebas text-xl md:text-2xl text-steel-white tracking-wider leading-none uppercase">
+                    <h3 className="font-bebas text-xl md:text-2xl text-steel-white tracking-wider leading-none">
                       {build.carModel}
-                    </h4>
-                    <p className="font-sans text-[11px] md:text-xs text-chrome-silver line-clamp-2 leading-relaxed">
+                    </h3>
+                    <p className="font-sans text-xs md:text-xs text-chrome-silver line-clamp-2 leading-relaxed">
                       {build.workDone}
                     </p>
                     
                     {isActive && (
-                      <div className="flex items-center gap-1.5 mt-1 font-mono text-[10px] text-blood-red uppercase tracking-wider font-semibold">
+                      <div className="flex items-center gap-1.5 mt-1 font-mono text-xs text-blood-red uppercase tracking-wider font-semibold">
                         <span>Tap to zoom build log</span>
                         <ArrowUpRight size={10} />
                       </div>

@@ -10,7 +10,7 @@ import { Booking } from './types';
 import { 
   Wrench, Settings, Gauge, Activity, Wind, Sparkles, 
   Star, Clock, MessageSquare, ShieldCheck, Zap, Heart, 
-  Send, Phone, CheckCircle, Clock3, Calendar, AlertTriangle, MessageCircle
+  Send, Phone, CheckCircle, Clock3, Calendar, AlertTriangle, MessageCircle, RotateCw
 } from 'lucide-react';
 
 export default function App() {
@@ -172,19 +172,19 @@ export default function App() {
             {/* Load-in line + eyebrow strip */}
             <div className="w-full max-w-[260px] flex flex-col items-center">
               <span className="hero-line-wipe block h-[2px] bg-blood-red w-20 mb-2" />
-              <span className="font-mono text-[9px] tracking-[0.3em] text-chrome-silver uppercase block">
+              <span className="font-mono text-xs tracking-[0.3em] text-chrome-silver uppercase block">
                 BURNABY'S JDM & PERFORMANCE SPECIALISTS
               </span>
             </div>
 
             {/* Headline — three scale levels */}
             <div className="hero-rise-fade flex flex-col items-center gap-1 mt-4">
-              <span className="font-bebas text-xl text-chrome-silver tracking-wide uppercase leading-none">
+              <span className="font-bebas text-xl text-chrome-silver tracking-wide leading-none">
                 Where your car gets
               </span>
-              <h2 className="font-bebas text-6xl text-steel-white uppercase leading-[0.95]">
+              <h1 className="font-bebas text-6xl text-steel-white uppercase leading-[0.95]">
                 DreamVille
-              </h2>
+              </h1>
               <span className="inline-block font-bebas text-lg text-blood-red uppercase border border-blood-red px-3 py-0.5 -rotate-2 neon-glow-red mt-1.5">
                 Treatment
               </span>
@@ -204,7 +204,7 @@ export default function App() {
                   <Star key={i} size={14} fill="currentColor" />
                 ))}
               </div>
-              <span className="font-mono text-[11px] text-chrome-silver uppercase tracking-wide">
+              <span className="font-mono text-xs text-chrome-silver uppercase tracking-wide">
                 4.9 · 135+ Google Reviews
               </span>
             </div>
@@ -214,14 +214,14 @@ export default function App() {
           <div className="relative z-10 mt-auto px-6 pb-8 flex flex-col sm:flex-row gap-3">
             <button
               onClick={handleScrollToBooking}
-              className="flex-1 text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-4 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all active:scale-95 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
+              className="btn-primary flex-1"
             >
               BOOK APPOINTMENT
             </button>
 
             <a
               href="tel:604-442-8265"
-              className="flex-1 text-center border border-neutral-700 hover:border-blood-red hover:text-blood-red bg-void-black/50 backdrop-blur-sm text-steel-white px-8 py-4 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none transition-colors"
+              className="btn-secondary flex-1"
             >
               CALL NOW
             </a>
@@ -239,31 +239,27 @@ export default function App() {
           {/* Particle and techy floor guides */}
           <div className="absolute inset-0 carbon-texture opacity-10 pointer-events-none z-[1]" />
 
-          {/* Vertical chassis/VIN-plate badge running along the hero's left edge */}
-          <div className="flex absolute left-6 top-1/2 -translate-y-1/2 z-20 items-center">
-            <div className="border border-neutral-700/70 bg-void-black/50 backdrop-blur-sm px-2 py-4">
-              <span className="vin-plate-vertical font-mono text-[9px] tracking-[0.35em] text-chrome-silver uppercase whitespace-nowrap">
-                BURNABY'S JDM &amp; PERFORMANCE SPECIALISTS
-              </span>
-            </div>
-          </div>
-
           {/* Content — confined to the left third, clear of grille/headlights/hood */}
           <div className="relative z-10 w-full min-h-screen flex items-center">
             <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
               <div className="flex flex-col items-start gap-4 w-[38%] max-w-md pl-10">
 
+                {/* Eyebrow tag — horizontal, readable (replaces the old 90°-rotated edge label) */}
+                <span className="font-mono text-xs tracking-[0.3em] text-chrome-silver uppercase">
+                  BURNABY'S JDM &amp; PERFORMANCE SPECIALISTS
+                </span>
+
                 {/* Load-in line */}
-                <span className="hero-line-wipe block h-[2px] bg-blood-red w-28 mb-2" />
+                <span className="hero-line-wipe block h-[2px] bg-blood-red w-28 -mt-2 mb-1" />
 
                 {/* Headline — three distinct scale levels + inline review stat, single rise/fade with the line above */}
                 <div className="hero-rise-fade flex flex-col items-start gap-1">
-                  <span className="font-bebas text-2xl text-chrome-silver tracking-wide uppercase leading-none">
+                  <span className="font-bebas text-2xl text-chrome-silver tracking-wide leading-none">
                     Where your car gets
                   </span>
-                  <h2 className="font-bebas text-6xl text-steel-white tracking-normal uppercase leading-[0.95]">
+                  <h1 className="font-bebas text-6xl text-steel-white tracking-normal uppercase leading-[0.95]">
                     DreamVille
-                  </h2>
+                  </h1>
                   <span className="inline-block font-bebas text-xl text-blood-red uppercase border border-blood-red px-3 py-0.5 -rotate-2 neon-glow-red mt-1.5">
                     Treatment
                   </span>
@@ -275,7 +271,7 @@ export default function App() {
                         <Star key={i} size={12} fill="currentColor" />
                       ))}
                     </div>
-                    <span className="font-mono text-[10px] text-chrome-silver uppercase tracking-wide">
+                    <span className="font-mono text-xs text-chrome-silver uppercase tracking-wide">
                       4.9★ · 135+ Google Reviews
                     </span>
                   </div>
@@ -292,14 +288,14 @@ export default function App() {
                 <div className="flex flex-wrap gap-3.5 mt-2">
                   <button
                     onClick={handleScrollToBooking}
-                    className="text-center bg-blood-red hover:bg-red-700 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all hover:scale-105 shadow-[0_0_15px_rgba(196,30,30,0.4)]"
+                    className="btn-primary"
                   >
                     BOOK APPOINTMENT
                   </button>
 
                   <a
                     href="tel:604-442-8265"
-                    className="text-center border border-neutral-800 hover:border-blood-red hover:text-blood-red bg-carbon-gray/20 text-steel-white px-8 py-3.5 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none transition-colors"
+                    className="btn-secondary"
                   >
                     CALL NOW
                   </a>
@@ -327,7 +323,7 @@ export default function App() {
                 {stats.reviews === 135 ? '135+' : `${stats.reviews}+`}
               </span>
               <span className="font-rajdhani text-xs font-bold text-blood-red uppercase tracking-widest block mt-1">Google Reviews</span>
-              <p className="font-mono text-[9px] text-chrome-silver uppercase mt-2">5★ Rated Tuning</p>
+              <p className="font-mono text-xs text-chrome-silver mt-2">5★ Rated Tuning</p>
               <div className="h-0.5 bg-neutral-900 group-hover:bg-blood-red mt-3 transition-colors duration-300" />
             </div>
 
@@ -336,7 +332,7 @@ export default function App() {
                 {stats.rating === 4.9 ? '4.9★' : `${stats.rating}★`}
               </span>
               <span className="font-rajdhani text-xs font-bold text-blood-red uppercase tracking-widest block mt-1">Overall Rating</span>
-              <p className="font-mono text-[9px] text-chrome-silver uppercase mt-2">Precision Service</p>
+              <p className="font-mono text-xs text-chrome-silver mt-2">Precision Service</p>
               <div className="h-0.5 bg-neutral-900 group-hover:bg-blood-red mt-3 transition-colors duration-300" />
             </div>
 
@@ -345,7 +341,7 @@ export default function App() {
                 {stats.experience === 10 ? '10+ Yrs' : `${stats.experience} Yrs`}
               </span>
               <span className="font-rajdhani text-xs font-bold text-blood-red uppercase tracking-widest block mt-1">Experience</span>
-              <p className="font-mono text-[9px] text-chrome-silver uppercase mt-2">Burnaby Master Techs</p>
+              <p className="font-mono text-xs text-chrome-silver mt-2">Burnaby Master Techs</p>
               <div className="h-0.5 bg-neutral-900 group-hover:bg-blood-red mt-3 transition-colors duration-300" />
             </div>
 
@@ -354,7 +350,7 @@ export default function App() {
                 {stats.satisfaction}%
               </span>
               <span className="font-rajdhani text-xs font-bold text-blood-red uppercase tracking-widest block mt-1">Honest Guarantee</span>
-              <p className="font-mono text-[9px] text-chrome-silver uppercase mt-2">No Hidden Fees</p>
+              <p className="font-mono text-xs text-chrome-silver mt-2">No Hidden Fees</p>
               <div className="h-0.5 bg-neutral-900 group-hover:bg-blood-red mt-3 transition-colors duration-300" />
             </div>
 
@@ -367,7 +363,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           
           {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-4 gap-6">
             <div className="flex flex-col gap-2">
               <span className="font-mono text-xs text-blood-red tracking-[0.25em] uppercase">EXPERTISE SPECS</span>
               <h2 className="font-bebas text-4xl md:text-6xl text-steel-white tracking-wider uppercase">
@@ -375,9 +371,16 @@ export default function App() {
               </h2>
             </div>
             <p className="text-sm text-chrome-silver max-w-md leading-relaxed">
-              We combine elite tuner knowledge with commercial-grade tooling. 
-              Click on any card to flip and view estimated rates and turnaround timelines.
+              We combine elite tuner knowledge with commercial-grade tooling.
             </p>
+          </div>
+
+          {/* Flip hint — sits right above the cards it refers to, not buried in the header copy */}
+          <div className="flex items-center gap-2 mb-8 text-blood-red">
+            <RotateCw size={14} />
+            <span className="font-mono text-xs uppercase tracking-widest">
+              Tap any card to flip — see rates &amp; turnaround
+            </span>
           </div>
 
           {/* Service Cards Grid */}
@@ -390,9 +393,14 @@ export default function App() {
                   onClick={() => setActiveFlippedCard(isFlipped ? null : service.id)}
                   onMouseEnter={() => setActiveFlippedCard(service.id)}
                   onMouseLeave={() => setActiveFlippedCard(null)}
-                  className="w-full h-[260px] cursor-pointer group"
+                  className="relative w-full h-[260px] cursor-pointer group"
                   style={{ perspective: '1000px' }}
                 >
+                  {/* Corner flip signifier — visible without hovering, so the interaction is discoverable */}
+                  <div className="absolute top-3 right-3 z-10 w-7 h-7 rounded-full bg-void-black/70 border border-neutral-800 group-hover:border-blood-red flex items-center justify-center text-chrome-silver group-hover:text-blood-red transition-colors pointer-events-none">
+                    <RotateCw size={13} />
+                  </div>
+
                   {/* Card Flipper Inner Box */}
                   <div 
                     className="relative w-full h-full transition-transform duration-500 ease-out"
@@ -420,7 +428,7 @@ export default function App() {
                       </div>
 
                       <div className="flex items-center justify-between border-t border-neutral-900 pt-4 mt-2">
-                        <span className="font-mono text-[9px] text-chrome-silver tracking-wider uppercase">VIEW DETAILS</span>
+                        <span className="font-mono text-xs text-chrome-silver tracking-wider uppercase">VIEW DETAILS</span>
                         <span className="text-blood-red font-mono text-xs font-semibold group-hover:translate-x-1.5 transition-transform">&rarr;</span>
                       </div>
                     </div>
@@ -434,20 +442,20 @@ export default function App() {
                       }}
                     >
                       <div className="flex flex-col gap-3">
-                        <span className="font-mono text-[9px] text-blood-red tracking-widest uppercase font-semibold">ESTIMATED PARAMETERS</span>
+                        <span className="font-mono text-xs text-blood-red tracking-widest uppercase font-semibold">ESTIMATED PARAMETERS</span>
                         <h4 className="font-rajdhani text-lg font-bold text-steel-white leading-tight">{service.title}</h4>
-                        <p className="text-[11px] text-chrome-silver leading-relaxed mt-1">
+                        <p className="text-xs text-chrome-silver leading-relaxed mt-1">
                           {service.details}
                         </p>
                       </div>
 
                       <div className="grid grid-cols-2 gap-2 border-t border-neutral-900 pt-3">
                         <div>
-                          <span className="font-mono text-[8px] text-neutral-500 uppercase block">RATES FROM:</span>
+                          <span className="font-mono text-xs text-neutral-500 uppercase block">RATES FROM:</span>
                           <strong className="font-mono text-sm text-steel-white">{service.price}</strong>
                         </div>
                         <div>
-                          <span className="font-mono text-[8px] text-neutral-500 uppercase block">EST_TIME:</span>
+                          <span className="font-mono text-xs text-neutral-500 uppercase block">EST_TIME:</span>
                           <strong className="font-mono text-sm text-blood-red">{service.turnaround}</strong>
                         </div>
                       </div>
@@ -511,7 +519,7 @@ export default function App() {
               <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded-none flex items-center justify-center text-blood-red mb-5">
                 <ShieldCheck size={20} />
               </div>
-              <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide uppercase mb-2">
+              <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide mb-2">
                 Honest Diagnostics
               </h3>
               <p className="text-xs text-chrome-silver leading-relaxed">
@@ -523,7 +531,7 @@ export default function App() {
               <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded-none flex items-center justify-center text-blood-red mb-5">
                 <Clock size={20} />
               </div>
-              <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide uppercase mb-2">
+              <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide mb-2">
                 Fast Turnarounds
               </h3>
               <p className="text-xs text-chrome-silver leading-relaxed">
@@ -535,7 +543,7 @@ export default function App() {
               <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded-none flex items-center justify-center text-blood-red mb-5">
                 <Zap size={20} />
               </div>
-              <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide uppercase mb-2">
+              <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide mb-2">
                 Expert Calibrations
               </h3>
               <p className="text-xs text-chrome-silver leading-relaxed">
@@ -547,7 +555,7 @@ export default function App() {
               <div className="w-10 h-10 bg-neutral-950 border border-neutral-900 rounded-none flex items-center justify-center text-blood-red mb-5">
                 <Heart size={20} />
               </div>
-              <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide uppercase mb-2">
+              <h3 className="font-rajdhani text-lg font-bold text-steel-white tracking-wide mb-2">
                 Tuner Enthusiasts
               </h3>
               <p className="text-xs text-chrome-silver leading-relaxed">
@@ -605,7 +613,7 @@ export default function App() {
                   </div>
                   <div className="flex flex-col">
                     <span className="font-rajdhani text-sm font-bold text-steel-white leading-none">{rev.author}</span>
-                    <span className="font-mono text-[9px] text-chrome-silver tracking-wider leading-none mt-1">{rev.date}</span>
+                    <span className="font-mono text-xs text-chrome-silver tracking-wider leading-none mt-1">{rev.date}</span>
                   </div>
                 </div>
               </div>
@@ -668,8 +676,9 @@ export default function App() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-2">
-                    <label className="font-mono text-[9px] text-chrome-silver uppercase tracking-wider font-semibold">Your Name *</label>
+                    <label htmlFor="booking-name" className="font-mono text-xs text-chrome-silver uppercase tracking-wider font-semibold">Your Name *</label>
                     <input
+                      id="booking-name"
                       type="text"
                       required
                       placeholder="e.g. Justin Chen"
@@ -679,8 +688,9 @@ export default function App() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="font-mono text-[9px] text-chrome-silver uppercase tracking-wider font-semibold">Phone Number *</label>
+                    <label htmlFor="booking-phone" className="font-mono text-xs text-chrome-silver uppercase tracking-wider font-semibold">Phone Number *</label>
                     <input
+                      id="booking-phone"
                       type="tel"
                       required
                       placeholder="e.g. 604-555-0199"
@@ -693,8 +703,9 @@ export default function App() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="flex flex-col gap-2">
-                    <label className="font-mono text-[9px] text-chrome-silver uppercase tracking-wider font-semibold">Car Model & Year</label>
+                    <label htmlFor="booking-car" className="font-mono text-xs text-chrome-silver uppercase tracking-wider font-semibold">Car Model &amp; Year</label>
                     <input
+                      id="booking-car"
                       type="text"
                       placeholder="e.g. 2021 Toyota Supra A90"
                       value={formData.carDetails}
@@ -703,25 +714,27 @@ export default function App() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="font-mono text-[9px] text-chrome-silver uppercase tracking-wider font-semibold">Preferred Service</label>
+                    <label htmlFor="booking-service" className="font-mono text-xs text-chrome-silver uppercase tracking-wider font-semibold">Preferred Service</label>
                     <select
+                      id="booking-service"
                       value={formData.service}
                       onChange={(e) => setFormData({...formData, service: e.target.value})}
                       className="bg-void-black/80 border border-neutral-800 text-sm text-steel-white rounded-none px-3 py-3 focus:outline-none focus:border-blood-red focus:ring-1 focus:ring-blood-red transition-all cursor-pointer"
                     >
-                      <option>ECU Remapping & Performance Tuning</option>
-                      <option>Engine Diagnostics & Maintenance</option>
+                      <option>ECU Remapping &amp; Performance Tuning</option>
+                      <option>Engine Diagnostics &amp; Maintenance</option>
                       <option>Turbo / Supercharger Upgrades</option>
                       <option>Custom Exhaust Hand-Fabrication</option>
                       <option>Suspension Corner Alignment</option>
-                      <option>Full Detail & Ceramic Shielding</option>
+                      <option>Full Detail &amp; Ceramic Shielding</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="font-mono text-[9px] text-chrome-silver uppercase tracking-wider font-semibold">Target Booking Date *</label>
+                  <label htmlFor="booking-date" className="font-mono text-xs text-chrome-silver uppercase tracking-wider font-semibold">Target Booking Date *</label>
                   <input
+                    id="booking-date"
                     type="date"
                     required
                     value={formData.date}
@@ -731,8 +744,9 @@ export default function App() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="font-mono text-[9px] text-chrome-silver uppercase tracking-wider font-semibold">Custom tuning goals / Notes</label>
+                  <label htmlFor="booking-notes" className="font-mono text-xs text-chrome-silver uppercase tracking-wider font-semibold">Custom tuning goals / Notes</label>
                   <textarea
+                    id="booking-notes"
                     rows={3}
                     placeholder="Describe specific performance parameters (e.g. Stage 2 burble remapping, track alignment goals)..."
                     value={formData.notes}
@@ -743,7 +757,7 @@ export default function App() {
 
                 <button
                   type="submit"
-                  className="bg-blood-red hover:bg-red-700 text-steel-white py-3 px-6 text-sm font-rajdhani font-bold tracking-widest uppercase rounded-none cursor-pointer transition-all active:scale-[0.98] duration-150 flex items-center justify-center gap-2"
+                  className="btn-primary"
                 >
                   <Send size={15} />
                   <span>SEND IT →</span>
@@ -754,25 +768,25 @@ export default function App() {
               {/* REAL-TIME LOGGED ACTIVE REQUESTS (PERSISTENCE PROOF) */}
               {bookings.length > 0 && (
                 <div className="flex flex-col gap-3 mt-4">
-                  <span className="font-mono text-[9px] text-neutral-500 uppercase tracking-widest">ACTIVE SUBMITTED INVOICES (LOCAL SESSION)</span>
+                  <span className="font-mono text-xs text-neutral-500 uppercase tracking-widest">ACTIVE SUBMITTED INVOICES (LOCAL SESSION)</span>
                   <div className="space-y-2.5 max-h-[160px] overflow-y-auto">
                     {bookings.map((b) => (
                       <div key={b.id} className="bg-neutral-950 border border-neutral-900 rounded-none p-4 flex justify-between items-center text-xs">
                         <div className="flex flex-col gap-1">
                           <strong className="text-steel-white">{b.name} ({b.carDetails})</strong>
-                          <span className="text-chrome-silver font-mono text-[10px]">{b.service}</span>
-                          <span className="text-[10px] text-neutral-500 flex items-center gap-1.5 mt-0.5">
+                          <span className="text-chrome-silver font-mono text-xs">{b.service}</span>
+                          <span className="text-xs text-neutral-500 flex items-center gap-1.5 mt-0.5">
                             <Calendar size={10} /> Reserved: {b.date}
                           </span>
                         </div>
 
                         <div className="flex flex-col items-end gap-1">
-                          <span className="bg-amber-950/50 border border-amber-600/30 text-amber-400 font-mono text-[9px] px-2 py-0.5 rounded-none uppercase">
+                          <span className="bg-amber-950/50 border border-amber-600/30 text-amber-400 font-mono text-xs px-2 py-0.5 rounded-none uppercase">
                             {b.status}
                           </span>
                           <button
                             onClick={() => setBookings((prev) => prev.filter((bk) => bk.id !== b.id))}
-                            className="text-[10px] text-neutral-600 hover:text-blood-red uppercase"
+                            className="text-xs text-neutral-600 hover:text-blood-red uppercase"
                           >
                             Delete
                           </button>
@@ -808,17 +822,17 @@ export default function App() {
               {/* Key Contact Metrics */}
               <div className="grid grid-cols-2 gap-4 bg-carbon-gray/20 border border-neutral-900/60 p-4 rounded-none">
                 <div>
-                  <span className="font-mono text-[8px] text-neutral-500 uppercase block">PHONE INTAKE</span>
+                  <span className="font-mono text-xs text-neutral-500 uppercase block">PHONE INTAKE</span>
                   <a href="tel:604-442-8265" className="font-rajdhani text-lg font-bold text-steel-white hover:text-blood-red transition-colors block mt-0.5">
                     📞 604-442-8265
                   </a>
                 </div>
                 <div>
-                  <span className="font-mono text-[8px] text-neutral-500 uppercase block">OPERATING HOURS</span>
+                  <span className="font-mono text-xs text-neutral-500 uppercase block">OPERATING HOURS</span>
                   <span className="font-rajdhani text-xs font-bold text-chrome-silver block mt-1">
                     Mon - Sat: 11 AM - 9 PM
                   </span>
-                  <span className="font-sans text-[10px] text-neutral-600 block">
+                  <span className="font-sans text-xs text-neutral-600 block">
                     Sunday: 12 PM - 7 PM
                   </span>
                 </div>
@@ -847,17 +861,17 @@ export default function App() {
                   DREAMVILLE<span className="text-blood-red">.</span>AUTO
                 </h3>
               </div>
-              <p className="text-[10px] text-neutral-500 max-w-xs leading-relaxed mt-1">
+              <p className="text-xs text-neutral-500 max-w-xs leading-relaxed mt-1">
                 Burnaby’s premier tuner and luxury auto garage. Dedicated to precision mechanical engineering, remapping, and ceramic preservation.
               </p>
             </div>
 
             {/* Column 2: Nav Quicklinks */}
             <div className="flex flex-col gap-3">
-              <strong className="text-steel-white uppercase text-[10px] tracking-wider font-semibold border-b border-neutral-900 pb-1.5">
+              <strong className="text-steel-white uppercase text-xs tracking-wider font-semibold border-b border-neutral-900 pb-1.5">
                 DIRECTORY
               </strong>
-              <div className="flex flex-col gap-2 text-[11px]">
+              <div className="flex flex-col gap-2 text-xs">
                 <a href="#home" className="hover:text-blood-red transition-colors">Home Page</a>
                 <a href="#services" className="hover:text-blood-red transition-colors">TIG & ECU Services</a>
                 <a href="#gallery" className="hover:text-blood-red transition-colors">Tuner Builds Logs</a>
@@ -867,10 +881,10 @@ export default function App() {
 
             {/* Column 3: Hours */}
             <div className="flex flex-col gap-3">
-              <strong className="text-steel-white uppercase text-[10px] tracking-wider font-semibold border-b border-neutral-900 pb-1.5">
+              <strong className="text-steel-white uppercase text-xs tracking-wider font-semibold border-b border-neutral-900 pb-1.5">
                 TUNER HOURS
               </strong>
-              <div className="flex flex-col gap-2 text-[11px] text-neutral-400">
+              <div className="flex flex-col gap-2 text-xs text-neutral-400">
                 <p className="flex justify-between">
                   <span>Mon - Fri:</span>
                   <span className="text-steel-white">11:00 AM - 9:00 PM</span>
@@ -888,10 +902,10 @@ export default function App() {
 
             {/* Column 4: Location */}
             <div className="flex flex-col gap-3">
-              <strong className="text-steel-white uppercase text-[10px] tracking-wider font-semibold border-b border-neutral-900 pb-1.5">
+              <strong className="text-steel-white uppercase text-xs tracking-wider font-semibold border-b border-neutral-900 pb-1.5">
                 STATION COORDINATES
               </strong>
-              <div className="flex flex-col gap-2 text-[11px]">
+              <div className="flex flex-col gap-2 text-xs">
                 <p className="text-neutral-400 leading-relaxed">
                   📍 6432 Beresford St<br />
                   Burnaby, BC V5E 1B6
@@ -902,7 +916,7 @@ export default function App() {
 
           </div>
 
-          <div className="border-t border-neutral-900 pt-8 mt-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-neutral-600">
+          <div className="border-t border-neutral-900 pt-8 mt-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-neutral-600">
             <p>© 2026 Dreamville Auto. Crafted with absolute structural precision. All Rights Reserved.</p>
             <div className="flex gap-4">
               <a href="#" className="hover:text-blood-red transition-colors">Privacy Policy</a>
@@ -923,7 +937,7 @@ export default function App() {
         className="fixed right-5 sm:right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.45)] hover:scale-110 active:scale-95 transition-transform cursor-pointer animate-bounce group"
       >
         <MessageCircle size={24} className="group-hover:rotate-6 transition-transform" />
-        <span className="absolute right-14 top-1/2 -translate-y-1/2 bg-neutral-950/90 text-white font-mono text-[9px] px-2.5 py-1 rounded-none border border-neutral-900 uppercase tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="absolute right-14 top-1/2 -translate-y-1/2 bg-neutral-950/90 text-white font-mono text-xs px-2.5 py-1 rounded-none border border-neutral-900 uppercase tracking-wider whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           Live WhatsApp Support
         </span>
       </a>
