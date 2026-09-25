@@ -2,6 +2,7 @@ export interface ServiceItem {
   id: string;
   title: string;
   icon: string; // lucide icon name
+  image: string;
   shortDesc: string;
   details: string;
   price: string;

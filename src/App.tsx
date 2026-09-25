@@ -412,10 +412,21 @@ export default function App() {
                     
                     {/* FRONT SIDE */}
                     <div 
-                      className="absolute inset-0 bg-carbon-gray border border-neutral-900 hover:border-blood-red/40 rounded-none p-6 flex flex-col justify-between"
+                      className="absolute inset-0 bg-carbon-gray border border-neutral-900 hover:border-blood-red/40 rounded-none overflow-hidden flex flex-col justify-between"
                       style={{ backfaceVisibility: 'hidden' }}
                     >
-                      <div className="flex flex-col gap-4">
+                      {/* Car photo background */}
+                      <div className="absolute inset-0 z-0">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-55 group-hover:scale-105 transition-all duration-500"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-carbon-gray via-carbon-gray/85 to-carbon-gray/50" />
+                      </div>
+
+                      <div className="relative z-10 flex flex-col gap-4 p-6">
                         <div className="w-12 h-12 rounded-none bg-neutral-950 flex items-center justify-center border border-neutral-900 group-hover:border-blood-red/30 transition-all">
                           {renderServiceIcon(service.icon)}
                         </div>
@@ -427,7 +438,7 @@ export default function App() {
                         </p>
                       </div>
 
-                      <div className="flex items-center justify-between border-t border-neutral-900 pt-4 mt-2">
+                      <div className="relative z-10 flex items-center justify-between border-t border-neutral-900 pt-4 mt-2 px-6 pb-6">
                         <span className="font-mono text-xs text-chrome-silver tracking-wider uppercase">VIEW DETAILS</span>
                         <span className="text-blood-red font-mono text-xs font-semibold group-hover:translate-x-1.5 transition-transform">&rarr;</span>
                       </div>
